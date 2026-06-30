@@ -1,0 +1,119 @@
+Wissem SGHAIER 
+Passaporto: I499702  Data di nascita: 03/07/2000  Nazionalità: Tunisina  
+Numero di telefono: (+39) 3933134502 (Cellulare)  Indirizzo e-mail: 
+wissemsghaier866@gmail.com  LinkedIn: www.linkedin.com/in/sghaier-wissem  
+Indirizzo: Via Giovanna Sortino Scribano N 59,, 97100, Ragusa (RG) , Italia
+(Abitazione)   
+INGEGNERE DEVOPS – INFORMATICA SOLUZIONI AZIENDALI SRL – 01/09/2025 – Attuale – RAGUSA, ITALIA 
+01F527  Sviluppo Software
+•Architettura 3-Tier: Progettazione e sviluppo di applicazioni scalabili (PostgreSQL, Express, React, Node.js).
+• Interfacce Business: Realizzazione di un portale per la gestione Anagraﬁca (lato client) e di una dashboard di
+amministrazione (gestione utenti).
+•Containerizzazione: Dockerizzazione completa dell'intero ecosistema applicativo.
+01F4CA  DevOps & Infrastruttura
+•CI/CD & GitOps: Automazione delle pipeline tramite Nexus (Registry) e ArgoCD per il deployment continuo su 
+Kubernetes.
+•Osservabilità: Implementazione di uno stack di monitoraggio Loki / Grafana per l'analisi dei log API e delle
+performance dei server.
+•Gestione Infrastruttura: Monitoraggio e manutenzione di server virtualizzati su piattaforma Proxmox.
+01F9E0  Parole chiave tecniche:
+•Stack: PERN (PostgreSQL, Express, React, Node.js), Postman
+•Cloud/DevOps: Kubernetes, Docker, ArgoCD, Nexus, CI/CD. GitLab, Portainer, cAdvisor,
+•Monitoring: Prometheus, Grafana, Loki, Promtail, , Wazuh, Proxmox.
+INGEGNERE DEVOPS – NOUVELAIR – 01/01/2025 – 01/09/2025 – MONASTIR, TUNISIA 
+01F527  Implementazione di una pipeline CI/CD DevSecOps completa, integrando le seguenti fasi:
+• Test unitari, veriﬁca delle dipendenze, mutation testing e analisi della qualità del codice.
+01F6E1 ️ Raﬀorzamento della sicurezza nella pipeline:
+• Scansione delle policy con OPA
+• Analisi delle vulnerabilità delle immagini Docker (Trivy)
+• Integrazione di Falco per il rilevamento in tempo reale delle intrusioni
+01F680  Deployment automatico di un'applicazione three-tier (Frontend / Backend / Database) in un cluster Kubernetes:
+• Utilizzo di Helm per il packaging e il deployment
+• Test di performance post-deployment
+• Scansione della conﬁgurazione di Kubernetes
+01F4E6  Integrazione di notiﬁche e monitoraggio:
+• Notiﬁche automatiche su Slack a ogni fase della pipeline
+• Monitoraggio con Prometheus e Grafana
+• Gestione sicura dei segreti con HashiCorp Vault
+01F9E0  Parole chiave tecniche:
+GitLab, Jenkins, SonarQube, Trivy, Docker, Docker Compose, Kubernetes, Helm, OPA, Falco, HashiCorp Vault,
+Prometheus, Grafana, Slack, CI/CD
+INGEGNERE DEVOPS – ARTIFICIAL INSIGHT – 01/06/2024 – 30/09/2024 – TUNIS, TUNISIA 
+01F527  Progettazione e implementazione di pipeline CI/CD per diversi framework: Next.js, NestJS, Spring Boot, Angular,
+Flutter, Lumen e Go-Gin
+⚙️ Automazione dei processi di integrazione e distribuzione continua tramite GitLab CI e Jenkins
+01F9EA  Analisi della qualità del codice con SonarQube, per garantire stabilità e manutenibilità del software
+01F4E6  Deployment degli artefatti in un repository Nexus per una gestione eﬃciente delle versioni
+01F4CA  Esecuzione di test di performance con JMeter per valutare la scalabilità delle applicazioni
+ESPERIENZA LAVORATIVA
+1️/️3
+
+01F9E0  Parole chiave tecniche:
+GitLab CI/CD, Jenkins, GitLab, SonarQube, JMeter, NestJS, Fastlane, Slack, Nexus, Docker, Go, Next.js, Flutter,
+Troubleshooting, Laravel Lumen, Portainer, Conﬂuence
+INGEGNERE SOFTWARE JUNIOR – MOBILITE – 01/06/2024 – 30/06/2024 – MONASTIR, TUNISIA 
+01F510  Implementazione di un sistema di autenticazione sicuro (login, registrazione, recupero password) con gestione delle
+autorizzazioni basata sui ruoli: Superadmin, Admin, Sviluppatore
+01F465  Gestione dei proﬁli utente e dei diritti di accesso in base alle responsabilità
+01F6E0 ️ Stack tecnologico utilizzato: MERN (MongoDB, Express.js, React.js, Node.js)
+01F5C3 ️ Utilizzo di MongoDB (NoSQL) per la gestione di dati strutturati e relazionali (progetti, utenti, ruoli)
+01F504  Sviluppo di API REST per garantire la comunicazione tra frontend e backend
+01F9E0  Parole chiave tecniche:
+React.js, Node.js, Express.js, MongoDB, NoSQL, MERN Stack, REST API
+INGEGNERE DEVOPS – QUANTUM SOLUTIONS – 01/01/2023 – 01/08/2023 – TUNIS, TUNISIA 
+01F527  Sviluppo di due pipeline CI/CD distinte, progettate speciﬁcamente per i framework Laravel e Next.js
+⚙️ La prima pipeline, focalizzata sull’integrazione continua (CI), esegue automaticamente test unitari, linting e analisi
+della qualità del codice, garantendo l’aﬃdabilità delle modiﬁche prima della loro integrazione
+01F680  La seconda pipeline, dedicata alla distribuzione continua (CD), gestisce il deployment automatico delle versioni
+approvate negli ambienti di staging e produzione
+01F9E0  Parole chiave tecniche:
+Jenkins, GitLab, Amministrazione di sistemi Linux, SonarQube, PostgreSQL, Selenium, JUnit, Git, Nexus, Docker, Docker
+Compose
+TECNICO INFORMATICO – SARTEX GROUP – 01/07/2022 – 31/08/2022 – MONASTIR, TUNISIA 
+⚙️ Conﬁgurazione di switch e router per una gestione ottimale delle reti aziendali
+01F5A5 ️ Competenze nel supporto tecnico e nell'amministrazione dei sistemi Windows
+01F6E0 ️ Esperienza nell’installazione, conﬁgurazione e manutenzione dell’hardware informatico
+01F9E0  Parole chiave tecniche:
+Conﬁgurazione switch, Conﬁgurazione router, Amministrazione Windows, Installazione hardware, Manutenzione
+hardware
+TECNICO INFORMATICO – SOPAT – 01/03/2022 – 30/04/2022 – MONASTIR, TUNISIA 
+01F4F7  Conﬁgurazione di telecamere di sorveglianza: installazione, impostazione e ottimizzazione per garantire una
+copertura di sicurezza eﬃcace
+01F310  Gestione di reti LAN/WAN: implementazione, conﬁgurazione e monitoraggio di infrastrutture di rete locali e
+geograﬁche
+01F5A5 ️ Conﬁgurazione di server: padronanza dei servizi Web, DHCP e DNS per garantire la connettività, la gestione degli
+indirizzi IP e la risoluzione dei nomi di dominio
+01F9E0  Parole chiave tecniche:
+Conﬁgurazione telecamere di sorveglianza, Reti LAN/WAN, Conﬁgurazione server Web, DHCP, DNS
+01/01/2023 – 30/06/2025 Sfax, Tunisia 
+MASTER IN SISTEMI, RETI E CLOUD COMPUTING Facoltà di Scienze 
+Sito Internet https://fss.rnu.tn/fra/pages/472/Master-professionnel-en-Systèmes-Réseaux-et-Cloud-Computing/s1270 
+01/01/2020 – 31/07/2023 Sfax, Tunisia 
+LAUREA IN INGEGNERIA INFORMATICA Facoltà di Scienze 
+Sito Internet https://fss.rnu.tn/fra/pages/447/Ingénierie-des-Systèmes-d’Informations-Ingénierie-des-Réseaux-et-Systèmes/s1270 
+ISTRUZIONE E FORMAZIONE
+2️/️3
+
+Lingua madre:  ARABO 
+Altre lingue:   
+COMPRENSIONE ESPRESSIONE ORALE SCRITTURA
+Ascolto Lettura Produzione orale Interazione orale
+FRANCESE B1 B1 B1 B1 B1
+ITALIANO A2 A2 A2 A2 A2
+INGLESE B1 B1 B1 B1 B1
+Livelli: A1 e A2: Livello elementare B1 e B2: Livello intermedio C1 e C2: Livello avanzato 
+Protocolli di rete
+Protocoles (TCP,IP,DHCP,Telnet....)  HTTPS, DHCP, DNS, FTP, LDAP  IP, Ethernet, HTTP  TCP-UDP 
+0 1 F6 8 0  Strumenti CI/CD e DevOps
+Fastlane  Selenium  Docker, Portainer  GitLab CI/CD  Falco  Sonatype Nexus  SonarQube  Slack  Trivy  
+HashiCorp Vault  JUnit  JMeter  jenkins  Jira, Conﬂuence  OPA (Open Policy Agent) 
+0 1 F4 3 3  Contenitorizzazione e Orchestrazione
+Docker  Helm  Docker Compose  Kubernetes 
+0 1 F3 1 0  Framework per lo sviluppo web
+React.js  Next.js  Express.js  Node.js  NestJS  Laravel Lumen  Flutter 
+Autorizzo il trattamento dei miei dati personali presenti nel CV ai sensi dell’art. 13 d. lgs. 30 giugno 2003 n. 196 - "Codice in
+materia di protezione dei dati personali” e dell’art. 13 GDPR 679/16 - "Regolamento europeo sulla protezione dei dati
+personali”. 
+COMPETENZE LINGUISTICHE 
+COMPETENZE 
+3️/️3
