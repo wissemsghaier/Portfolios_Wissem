@@ -66,7 +66,7 @@ const cardObserver = new IntersectionObserver(
 function registerCardAnimations(scope = document) {
   const root = scope && typeof scope.querySelectorAll === "function" ? scope : document;
   const cards = root.querySelectorAll(
-    ".about-grid article, .about-focus-grid article, .knowledge-grid article, .tool-group, .experience-card, .achievement-grid article, .cert-card, .education-grid article, .timeline article, .repo-card, .contact-grid a, .profile-card, .tools-block, .skill-card"
+    ".home-mini-grid article, .about-grid article, .about-focus-grid article, .about-skill-level-grid article, .knowledge-grid article, .tool-group, .experience-card, .achievement-grid article, .cert-card, .cert-academic-card, .education-grid article, .timeline article, .repo-card, .contact-grid a, .profile-card, .tools-block, .skill-card"
   );
 
   cards.forEach((card) => {
@@ -140,6 +140,139 @@ const linkedinProjects = [
   }
 ];
 
+const linkedinExperiences = [
+  {
+    role: "DevOps Engineer",
+    company: "Informatica Soluzioni Aziendali",
+    period: "Sep 2025 - Present",
+    summary:
+      "Building and operating a 3-tier PERN platform with full containerization, GitOps delivery, and observability for production workloads.",
+    icon: "ri-terminal-window-line",
+    pills: [
+      { title: "PERN", detail: "PostgreSQL + Node.js", icon: "ri-stack-line" },
+      { title: "GitOps", detail: "ArgoCD continuous deploy", icon: "ri-git-branch-line" },
+      { title: "Kubernetes", detail: "Cluster operations", icon: "ri-steering-2-line" },
+      { title: "Monitoring", detail: "Loki + Grafana", icon: "ri-line-chart-line" },
+      { title: "Registry", detail: "Nexus artifacts", icon: "ri-store-2-line" },
+      { title: "Docker", detail: "Platform containerization", icon: "ri-ship-2-line" }
+    ]
+  },
+  {
+    role: "DevOps Engineer",
+    company: "Nouvelair",
+    period: "Jan 2025 - Sep 2025",
+    summary:
+      "Implemented an end-to-end DevSecOps pipeline with policy checks, image scanning, runtime detection, and automated Kubernetes deployment.",
+    icon: "ri-shield-check-line",
+    pills: [
+      { title: "CI/CD", detail: "GitLab + Jenkins", icon: "ri-flow-chart" },
+      { title: "Security", detail: "OPA + Trivy", icon: "ri-shield-keyhole-line" },
+      { title: "Runtime", detail: "Falco intrusion detection", icon: "ri-radar-line" },
+      { title: "Deploy", detail: "Helm on Kubernetes", icon: "ri-rocket-2-line" },
+      { title: "Secrets", detail: "HashiCorp Vault", icon: "ri-lock-2-line" },
+      { title: "Observability", detail: "Prometheus + Grafana", icon: "ri-dashboard-line" }
+    ]
+  },
+  {
+    role: "DevOps Engineer",
+    company: "Artificial Insight",
+    period: "Jun 2024 - Sep 2024",
+    summary:
+      "Designed multi-framework CI/CD pipelines and integrated quality gates, artifact management, and performance testing for delivery reliability.",
+    icon: "ri-cpu-line",
+    pills: [
+      { title: "Pipelines", detail: "GitLab CI + Jenkins", icon: "ri-flow-chart" },
+      { title: "Code Quality", detail: "SonarQube analysis", icon: "ri-search-eye-line" },
+      { title: "Artifacts", detail: "Nexus repository", icon: "ri-archive-drawer-line" },
+      { title: "Performance", detail: "JMeter testing", icon: "ri-speed-up-line" },
+      { title: "Containers", detail: "Dockerized workloads", icon: "ri-box-3-line" },
+      { title: "Frameworks", detail: "Next.js, NestJS, Spring", icon: "ri-code-s-slash-line" }
+    ]
+  },
+  {
+    role: "Junior Software Engineer",
+    company: "Mobilite",
+    period: "Jun 2024 - Jun 2024",
+    summary:
+      "Developed secure authentication and role-based authorization workflows with REST APIs in a full MERN architecture.",
+    icon: "ri-code-box-line",
+    pills: [
+      { title: "MERN", detail: "MongoDB + React + Node", icon: "ri-stack-line" },
+      { title: "Security", detail: "RBAC and auth flows", icon: "ri-shield-user-line" },
+      { title: "APIs", detail: "REST integrations", icon: "ri-route-line" },
+      { title: "Data", detail: "MongoDB modeling", icon: "ri-database-2-line" },
+      { title: "Frontend", detail: "React interfaces", icon: "ri-layout-2-line" },
+      { title: "Backend", detail: "Express services", icon: "ri-server-line" }
+    ]
+  },
+  {
+    role: "DevOps Engineer",
+    company: "Quantum Solutions",
+    period: "Jan 2023 - Aug 2023",
+    summary:
+      "Built dedicated CI and CD pipelines for Laravel and Next.js, with automated testing, quality controls, and environment deployments.",
+    icon: "ri-settings-4-line",
+    pills: [
+      { title: "CI", detail: "Unit tests and linting", icon: "ri-test-tube-line" },
+      { title: "CD", detail: "Staging and production", icon: "ri-send-plane-2-line" },
+      { title: "Jenkins", detail: "Pipeline orchestration", icon: "ri-hammer-line" },
+      { title: "SonarQube", detail: "Quality checks", icon: "ri-shield-check-line" },
+      { title: "Docker", detail: "Deployment packaging", icon: "ri-ship-2-line" },
+      { title: "Nexus", detail: "Artifact flow", icon: "ri-store-2-line" }
+    ]
+  }
+];
+
+function renderExperiences(limit = 6) {
+  const experienceGrid = document.getElementById("experienceGrid");
+  if (!experienceGrid) {
+    return;
+  }
+
+  const items = linkedinExperiences.slice(0, Math.max(0, limit));
+  if (items.length === 0) {
+    experienceGrid.innerHTML = `
+      <article class="experience-card cinematic-panel">
+        <p class="experience-summary">No experience data available yet. Update linkedinExperiences in script.js.</p>
+      </article>
+    `;
+    registerCardAnimations(experienceGrid);
+    applyTiltEffects(experienceGrid);
+    return;
+  }
+
+  experienceGrid.innerHTML = items
+    .map((item, index) => {
+      const pills = (item.pills || [])
+        .map(
+          (pill) =>
+            `<li class="experience-pill"><i class="${pill.icon || "ri-checkbox-circle-line"}"></i><div><strong>${pill.title}</strong><small>${pill.detail}</small></div></li>`
+        )
+        .join("");
+
+      const accentClass = index % 2 === 1 ? " accent" : "";
+
+      return `
+        <article class="experience-card cinematic-panel">
+          <div class="experience-top">
+            <span class="experience-emblem${accentClass}"><i class="${item.icon || "ri-briefcase-line"}"></i></span>
+            <div>
+              <h3 class="experience-role">${item.role}</h3>
+              <p class="experience-company">${item.company}</p>
+              <p class="experience-period">${item.period}</p>
+            </div>
+          </div>
+          <p class="experience-summary">${item.summary}</p>
+          <ul class="experience-pill-grid">${pills}</ul>
+        </article>
+      `;
+    })
+    .join("");
+
+  registerCardAnimations(experienceGrid);
+  applyTiltEffects(experienceGrid);
+}
+
 const certifications = [
   {
     title: "Introduction to Serverless on Kubernetes (LFS157)",
@@ -149,7 +282,7 @@ const certifications = [
     skills: "Serverless, Kubernetes",
     credentialUrl:
       "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-5e1c18fd-c9bb-4ae9-a8f6-658912967efb-certificate.pdf",
-    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+    logo: "assets/cert-logos/lfs157-badge.png"
   },
   {
     title: "Introduction to Kubernetes (LFS158)",
@@ -159,7 +292,7 @@ const certifications = [
     skills: "Kubernetes",
     credentialUrl:
       "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-5e39da2b-6d70-485f-9a2c-1627fc106393-certificate.pdf",
-    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+    logo: "assets/cert-logos/lfs158-badge.png"
   },
   {
     title: "Introduction to DevOps and Site Reliability Engineering (LFS162)",
@@ -169,7 +302,7 @@ const certifications = [
     skills: "DevOps, SRE",
     credentialUrl:
       "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-da4d80d0-c094-4b19-a8e0-f6c844e9b2d7-certificate.pdf",
-    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+    logo: "assets/cert-logos/lfs162-badge.png"
   },
   {
     title: "Introduction to DevSecOps for Managers (LFS180)",
@@ -179,7 +312,7 @@ const certifications = [
     skills: "DevSecOps",
     credentialUrl:
       "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-fb7e0de3-c0ec-4a99-9642-d2e2970218ed-certificate.pdf",
-    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+    logo: "assets/cert-logos/lfs180-badge.png"
   },
   {
     title: "Linux Foundation Certificate",
@@ -189,7 +322,7 @@ const certifications = [
     skills: "Cloud and DevOps",
     credentialUrl:
       "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-62a15b08-01cc-41d7-a159-892732b35cd9-certificate.pdf",
-    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+    logo: "assets/cert-logos/linux-foundation-logo.png"
   }
 ];
 
@@ -361,7 +494,16 @@ function renderCertifications() {
       return `
         <article class="cert-card cinematic-panel" style="--i:${index};">
           <div class="cert-head">
-            <img class="cert-logo" src="${certificate.logo}" alt="${certificate.issuer} logo" loading="lazy" />
+            <span class="cert-logo-wrap">
+              <img
+                class="cert-logo"
+                src="${certificate.logo || ""}"
+                alt="${certificate.issuer} logo"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+              />
+              <span class="cert-logo-fallback" aria-hidden="true"><i class="ri-award-line"></i></span>
+            </span>
             <span class="cert-verified"><i class="ri-checkbox-circle-fill"></i>Verified</span>
           </div>
           <h3>${certificate.title}</h3>
@@ -387,13 +529,6 @@ function renderCertifications() {
 }
 
 async function loadGitHubProfile() {
-  const profileUrl = `https://api.github.com/users/${GITHUB_USERNAME}`;
-  const response = await fetch(profileUrl);
-  if (!response.ok) {
-    throw new Error("Cannot load GitHub profile");
-  }
-  const profile = await response.json();
-
   const avatar = document.getElementById("profileAvatar");
   const profileName = document.getElementById("profileName");
   const profileRole = document.getElementById("profileRole");
@@ -401,6 +536,17 @@ async function loadGitHubProfile() {
   const statRepos = document.getElementById("statRepos");
   const statFollowers = document.getElementById("statFollowers");
   const statFollowing = document.getElementById("statFollowing");
+
+  if (!avatar && !profileName && !profileRole && !profileLocation && !statRepos && !statFollowers && !statFollowing) {
+    return;
+  }
+
+  const profileUrl = `https://api.github.com/users/${GITHUB_USERNAME}`;
+  const response = await fetch(profileUrl);
+  if (!response.ok) {
+    throw new Error("Cannot load GitHub profile");
+  }
+  const profile = await response.json();
 
   if (avatar && profile.avatar_url) {
     avatar.src = profile.avatar_url;
@@ -510,7 +656,7 @@ function normalizeSkillCardHeights() {
 function applyTiltEffects(scope = document) {
   const root = scope && typeof scope.querySelectorAll === "function" ? scope : document;
   const tiltElements = root.querySelectorAll(
-    ".repo-card, .about-grid article, .about-focus-grid article, .knowledge-grid article, .experience-card, .achievement-grid article, .cert-grid article, .education-grid article, .timeline article, .profile-card, .tools-block, .skill-card"
+    ".home-mini-grid article, .repo-card, .about-grid article, .about-focus-grid article, .about-skill-level-grid article, .knowledge-grid article, .experience-card, .achievement-grid article, .cert-grid article, .cert-academic-card, .education-grid article, .timeline article, .profile-card, .tools-block, .skill-card"
   );
 
   tiltElements.forEach((element) => {
@@ -536,6 +682,7 @@ function applyTiltEffects(scope = document) {
   });
 }
 
+renderExperiences(6);
 registerCardAnimations();
 applyTiltEffects();
 renderCertifications();
