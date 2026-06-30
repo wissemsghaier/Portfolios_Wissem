@@ -19,12 +19,69 @@ const revealObserver = new IntersectionObserver(
 
 revealElements.forEach((element) => {
   const delay = Number(element.dataset.delay || 0);
+  const duration = Number(element.dataset.duration || 680);
   element.style.setProperty("--delay", `${delay}ms`);
+  element.style.setProperty("--dur", `${duration}ms`);
   revealObserver.observe(element);
 });
 
 const navLinks = Array.from(document.querySelectorAll(".nav-link"));
 const sectionElements = Array.from(document.querySelectorAll("main section[id]"));
+
+if (navLinks.length > 0 && !navLinks.some((link) => link.classList.contains("active"))) {
+  navLinks[0].classList.add("active");
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const href = link.getAttribute("href") || "";
+    if (!href.startsWith("#")) {
+      return;
+    }
+    const target = document.querySelector(href);
+    if (!target) {
+      return;
+    }
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+const cardObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+      entry.target.classList.add("card-in-view");
+      observer.unobserve(entry.target);
+    });
+  },
+  {
+    threshold: 0.14,
+    rootMargin: "0px 0px -8% 0px"
+  }
+);
+
+function registerCardAnimations(scope = document) {
+  const root = scope && typeof scope.querySelectorAll === "function" ? scope : document;
+  const cards = root.querySelectorAll(
+    ".about-grid article, .about-focus-grid article, .knowledge-grid article, .tool-group, .experience-card, .achievement-grid article, .cert-card, .education-grid article, .timeline article, .repo-card, .contact-grid a, .profile-card, .tools-block, .skill-card"
+  );
+
+  cards.forEach((card) => {
+    if (card.dataset.cardAnim === "1") {
+      return;
+    }
+    card.dataset.cardAnim = "1";
+    card.classList.add("card-animate");
+
+    const siblings = card.parentElement ? Array.from(card.parentElement.children) : [card];
+    const index = Math.max(0, siblings.indexOf(card));
+    card.style.setProperty("--stagger", `${Math.min(index * 65, 420)}ms`);
+    cardObserver.observe(card);
+  });
+}
 
 const sectionObserver = new IntersectionObserver(
   (entries) => {
@@ -80,6 +137,59 @@ const linkedinProjects = [
       "Built pipelines for Next.js, NestJS, Spring Boot, Angular, Flutter, Lumen, and Go-Gin with SonarQube quality gates and Nexus artifact storage.",
     tags: ["SonarQube", "Nexus", "Next.js", "NestJS", "Spring Boot"],
     link: "https://www.linkedin.com/in/sghaier-wissem/"
+  }
+];
+
+const certifications = [
+  {
+    title: "Introduction to Serverless on Kubernetes (LFS157)",
+    issuer: "The Linux Foundation",
+    issuerUrl: "https://www.linkedin.com/company/the-linux-foundation/",
+    issued: "Apr 2025",
+    skills: "Serverless, Kubernetes",
+    credentialUrl:
+      "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-5e1c18fd-c9bb-4ae9-a8f6-658912967efb-certificate.pdf",
+    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+  },
+  {
+    title: "Introduction to Kubernetes (LFS158)",
+    issuer: "The Linux Foundation",
+    issuerUrl: "https://www.linkedin.com/company/the-linux-foundation/",
+    issued: "Mar 2025",
+    skills: "Kubernetes",
+    credentialUrl:
+      "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-5e39da2b-6d70-485f-9a2c-1627fc106393-certificate.pdf",
+    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+  },
+  {
+    title: "Introduction to DevOps and Site Reliability Engineering (LFS162)",
+    issuer: "The Linux Foundation",
+    issuerUrl: "https://www.linkedin.com/company/the-linux-foundation/",
+    issued: "Mar 2025",
+    skills: "DevOps, SRE",
+    credentialUrl:
+      "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-da4d80d0-c094-4b19-a8e0-f6c844e9b2d7-certificate.pdf",
+    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+  },
+  {
+    title: "Introduction to DevSecOps for Managers (LFS180)",
+    issuer: "The Linux Foundation",
+    issuerUrl: "https://www.linkedin.com/company/the-linux-foundation/",
+    issued: "Apr 2025",
+    skills: "DevSecOps",
+    credentialUrl:
+      "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-fb7e0de3-c0ec-4a99-9642-d2e2970218ed-certificate.pdf",
+    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
+  },
+  {
+    title: "Linux Foundation Certificate",
+    issuer: "The Linux Foundation",
+    issuerUrl: "https://www.linkedin.com/company/the-linux-foundation/",
+    issued: "2025",
+    skills: "Cloud and DevOps",
+    credentialUrl:
+      "https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/397bca9f-270d-4514-9f40-8c835614d54a-wissem-sghaer-62a15b08-01cc-41d7-a159-892732b35cd9-certificate.pdf",
+    logo: "https://training.linuxfoundation.org/wp-content/uploads/2024/04/LF-training-logo.png"
   }
 ];
 
@@ -171,6 +281,8 @@ function renderRepoCards(repositories) {
     .join("");
 
   repoGrid.innerHTML = cards;
+  registerCardAnimations(repoGrid);
+  applyTiltEffects(repoGrid);
 }
 
 function renderLinkedInProjects() {
@@ -186,6 +298,8 @@ function renderLinkedInProjects() {
         <p>Edit the linkedinProjects array in script.js to add your project history.</p>
       </article>
     `;
+    registerCardAnimations(linkedInGrid);
+    applyTiltEffects(linkedInGrid);
     return;
   }
 
@@ -212,6 +326,64 @@ function renderLinkedInProjects() {
       `;
     })
     .join("");
+
+  registerCardAnimations(linkedInGrid);
+  applyTiltEffects(linkedInGrid);
+}
+
+function renderCertifications() {
+  const certificationGrid = document.getElementById("certificationGrid");
+  if (!certificationGrid) {
+    return;
+  }
+
+  if (certifications.length === 0) {
+    certificationGrid.innerHTML = `
+      <article class="cert-card">
+        <h3>No certifications yet</h3>
+        <p>Add your certifications in the certifications array inside script.js.</p>
+      </article>
+    `;
+    registerCardAnimations(certificationGrid);
+    applyTiltEffects(certificationGrid);
+    return;
+  }
+
+  certificationGrid.innerHTML = certifications
+    .map((certificate, index) => {
+      const expiresMarkup = certificate.expires
+        ? `<li><i class="ri-calendar-check-line"></i> Expires: ${certificate.expires}</li>`
+        : "";
+      const skillsMarkup = certificate.skills
+        ? `<p class="cert-skills"><strong>Skills:</strong> ${certificate.skills}</p>`
+        : "";
+
+      return `
+        <article class="cert-card cinematic-panel" style="--i:${index};">
+          <div class="cert-head">
+            <img class="cert-logo" src="${certificate.logo}" alt="${certificate.issuer} logo" loading="lazy" />
+            <span class="cert-verified"><i class="ri-checkbox-circle-fill"></i>Verified</span>
+          </div>
+          <h3>${certificate.title}</h3>
+          <p class="cert-issuer">
+            <a href="${certificate.issuerUrl || '#'}" target="_blank" rel="noreferrer">${certificate.issuer}</a>
+          </p>
+          <ul class="cert-meta">
+            <li><i class="ri-calendar-line"></i> Issued: ${certificate.issued}</li>
+            ${expiresMarkup}
+          </ul>
+          ${skillsMarkup}
+          <a class="cert-link" href="${certificate.credentialUrl}" target="_blank" rel="noreferrer">
+            <i class="ri-external-link-line"></i>
+            Show credential
+          </a>
+        </article>
+      `;
+    })
+    .join("");
+
+  registerCardAnimations(certificationGrid);
+  applyTiltEffects(certificationGrid);
 }
 
 async function loadGitHubProfile() {
@@ -313,12 +485,40 @@ function animateCounters() {
   });
 }
 
-function applyTiltEffects() {
-  const tiltElements = document.querySelectorAll(
-    ".repo-card, .about-grid article, .knowledge-grid article, .achievement-grid article, .cert-grid article, .timeline article, .profile-card, .tools-block"
+function normalizeSkillCardHeights() {
+  const cards = Array.from(document.querySelectorAll(".skill-card"));
+  if (cards.length === 0) {
+    return;
+  }
+
+  cards.forEach((card) => {
+    card.style.height = "";
+    card.style.minHeight = "";
+  });
+
+  if (window.innerWidth < 981) {
+    return;
+  }
+
+  const maxHeight = cards.reduce((max, card) => Math.max(max, card.offsetHeight), 0);
+  cards.forEach((card) => {
+    card.style.height = `${maxHeight}px`;
+    card.style.minHeight = `${maxHeight}px`;
+  });
+}
+
+function applyTiltEffects(scope = document) {
+  const root = scope && typeof scope.querySelectorAll === "function" ? scope : document;
+  const tiltElements = root.querySelectorAll(
+    ".repo-card, .about-grid article, .about-focus-grid article, .knowledge-grid article, .experience-card, .achievement-grid article, .cert-grid article, .education-grid article, .timeline article, .profile-card, .tools-block, .skill-card"
   );
 
   tiltElements.forEach((element) => {
+    if (element.dataset.tiltReady === "1") {
+      return;
+    }
+    element.dataset.tiltReady = "1";
+
     element.addEventListener("mousemove", (event) => {
       const rect = element.getBoundingClientRect();
       const x = event.clientX - rect.left;
@@ -336,6 +536,16 @@ function applyTiltEffects() {
   });
 }
 
+registerCardAnimations();
 applyTiltEffects();
-renderLinkedInProjects();
-initGitHubData();
+renderCertifications();
+loadGitHubProfile().catch(() => {});
+normalizeSkillCardHeights();
+
+window.addEventListener("load", normalizeSkillCardHeights);
+
+let resizeTimer;
+window.addEventListener("resize", () => {
+  window.clearTimeout(resizeTimer);
+  resizeTimer = window.setTimeout(normalizeSkillCardHeights, 120);
+});

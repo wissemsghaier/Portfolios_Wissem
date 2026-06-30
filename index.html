@@ -28,31 +28,30 @@
     <div class="bg-grid"></div>
 
     <header class="topbar">
-      <a class="brand" href="#home">WissemSG</a>
-      <nav>
+      <a class="brand" href="#home" aria-label="Go to home section">
+        <span class="brand-mark">WS</span>
+        <span class="brand-text">Wissem Sghaier</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link" href="#home">Home</a>
         <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#industry">Industry</a>
-        <a class="nav-link" href="#expertise">Expertise</a>
-        <a class="nav-link" href="#tools">Tools</a>
+        <a class="nav-link" href="#skills">Skills</a>
         <a class="nav-link" href="#experience">Experience</a>
         <a class="nav-link" href="#certifications">Certifications</a>
-        <a class="nav-link" href="#linkedin-projects">LinkedIn Projects</a>
-        <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section id="home" class="hero reveal" data-delay="0" data-motion="up">
+      <section id="home" class="hero reveal" data-delay="0" data-duration="760" data-motion="up">
         <div class="hero-copy">
-          <p class="eyebrow">DevOps Engineer - Italy and Tunisia</p>
+          <p class="eyebrow">Hello, I am</p>
           <h1>
-            Meet your next
-            <span class="gradient-text">DevOps partner</span>
+            Wissem Sghaier
           </h1>
           <p class="lead">
-            I design secure CI/CD pipelines, automate cloud-native deployments,
-            and build resilient infrastructures for modern software teams.
+            DevOps Engineer focused on cloud-native delivery, secure CI/CD,
+            and reliable automation for modern software teams.
           </p>
           <div class="hero-cta">
             <a class="btn primary" href="#contact">Let us connect</a>
@@ -60,19 +59,19 @@
           </div>
           <ul class="quick-facts">
             <li><i class="ri-map-pin-line"></i> Ragusa, Italy</li>
-            <li><i class="ri-briefcase-4-line"></i> DevOps engineer at ISA</li>
+            <li><i class="ri-briefcase-4-line"></i> DevOps Engineer</li>
             <li><i class="ri-shield-check-line"></i> DevSecOps and GitOps focused</li>
           </ul>
         </div>
 
-        <aside class="profile-card reveal" data-delay="80">
+        <aside class="profile-card reveal" data-delay="90" data-duration="720">
           <img
             id="profileAvatar"
             src="https://avatars.githubusercontent.com/u/138905121?v=4"
             alt="Wissem Sghaier profile photo"
           />
           <h2 id="profileName">Wissem SGHAIER</h2>
-          <p id="profileRole">DevOps engineer at ISA</p>
+          <p id="profileRole">DevOps Engineer</p>
           <p class="profile-location">
             <i class="ri-map-pin-2-line"></i>
             <span id="profileLocation">Italy</span>
@@ -98,309 +97,251 @@
         </aside>
       </section>
 
-      <section id="industry" class="reveal" data-delay="0" data-motion="left">
-        <div class="section-heading">
-          <p class="eyebrow">Industry Knowledge</p>
-          <h2>Operational excellence patterns</h2>
-        </div>
-        <div class="knowledge-grid expanded">
-          <article>
-            <h3>Continuous Integration and Delivery</h3>
-            <p>Automated quality gates, test orchestration, and deployment readiness across multiple frameworks.</p>
-          </article>
-          <article>
-            <h3>DevSecOps by default</h3>
-            <p>Security checks integrated into CI/CD with OPA policies, Trivy scans, Falco runtime signals, and Vault secrets.</p>
-          </article>
-          <article>
-            <h3>Platform observability</h3>
-            <p>Production visibility with Prometheus, Grafana, and Loki for logs, metrics, and incident diagnosis.</p>
-          </article>
-          <article>
-            <h3>Release engineering</h3>
-            <p>Reliable release flow with artifact versioning, staging controls, rollback plans, and GitOps synchronization.</p>
-          </article>
-          <article>
-            <h3>Container operations</h3>
-            <p>Application containerization standards, image lifecycle management, and Kubernetes-native deployment workflows.</p>
-          </article>
-          <article>
-            <h3>Cross-team collaboration</h3>
-            <p>Developer-focused tooling and delivery templates that simplify onboarding and reduce deployment friction.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="about" class="reveal" data-delay="0" data-motion="right">
+      <section id="about" class="reveal" data-delay="80" data-duration="700" data-motion="right">
         <div class="section-heading">
           <p class="eyebrow">About Me</p>
-          <h2>Building the future one deployment at a time</h2>
+          <h2>What I do and what drives me</h2>
         </div>
-        <div class="about-grid">
+        <p class="section-intro about-intro">
+          With hands-on DevOps experience across CI/CD, containers, and platform reliability,
+          I help teams ship faster with stable, secure, and observable systems.
+        </p>
+        <div class="about-focus-grid">
           <article>
+            <i class="ri-user-star-line"></i>
+            <h3>About me</h3>
+            <p>Pragmatic engineer blending automation, collaboration, and production reliability in daily delivery.</p>
+          </article>
+          <article>
+            <i class="ri-flashlight-line"></i>
             <h3>What I do</h3>
-            <p>
-              I build CI/CD and GitOps platforms that shorten release cycles and
-              improve software quality from commit to production.
-            </p>
+            <p>I design CI/CD, GitOps, and Kubernetes workflows with built-in security and deployment confidence.</p>
           </article>
           <article>
-            <h3>Current mission</h3>
-            <p>
-              At Informatica Soluzioni Aziendali, I work on a 3-tier PERN
-              architecture, containerization, and Kubernetes operations.
-            </p>
-          </article>
-          <article>
-            <h3>My engineering style</h3>
-            <p>
-              Pragmatic automation, observable systems, and measurable improvements
-              across reliability, security, and team velocity.
-            </p>
+            <i class="ri-heart-pulse-line"></i>
+            <h3>My passion</h3>
+            <p>I enjoy building delivery platforms that stay fast, resilient, and easy for teams to scale.</p>
           </article>
         </div>
       </section>
 
-      <section id="expertise" class="reveal" data-delay="0" data-motion="left">
-        <div class="section-heading">
-          <p class="eyebrow">Technical Expertise</p>
-          <h2>Industry knowledge and tools</h2>
-        </div>
-        <div class="expertise-layout">
-          <div class="knowledge-grid">
-            <article>
-              <h3>CI/CD and GitOps</h3>
-              <p>Pipeline automation with GitLab CI/CD, Jenkins, Nexus, and ArgoCD.</p>
-            </article>
-            <article>
-              <h3>Container and Orchestration</h3>
-              <p>Docker, Docker Compose, Helm, and production deployments on Kubernetes.</p>
-            </article>
-            <article>
-              <h3>Observability and Monitoring</h3>
-              <p>Prometheus, Grafana, Loki, Promtail, and security telemetry patterns.</p>
-            </article>
-            <article>
-              <h3>Security Engineering</h3>
-              <p>Trivy image scanning, OPA policy checks, Falco runtime detection, Vault secrets.</p>
-            </article>
-          </div>
-
-          <div class="tools-block">
-            <h3>Tools and technologies</h3>
-            <div class="chip-groups">
-              <ul class="chips">
-                <li>Kubernetes</li>
-                <li>Docker</li>
-                <li>ArgoCD</li>
-                <li>GitLab</li>
-                <li>Jenkins</li>
-                <li>Nexus</li>
-                <li>Helm</li>
-                <li>Portainer</li>
-              </ul>
-              <ul class="chips">
-                <li>Prometheus</li>
-                <li>Grafana</li>
-                <li>Loki</li>
-                <li>Promtail</li>
-                <li>Wazuh</li>
-                <li>Trivy</li>
-                <li>OPA</li>
-                <li>Falco</li>
-              </ul>
-              <ul class="chips">
-                <li>PostgreSQL</li>
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>React</li>
-                <li>Next.js</li>
-                <li>NestJS</li>
-                <li>Go-Gin</li>
-                <li>Laravel Lumen</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="tools" class="reveal" data-delay="0" data-motion="right">
+      <section id="skills" class="reveal" data-delay="120" data-duration="720" data-motion="left">
         <div class="section-heading">
           <p class="eyebrow">Tools and Technologies</p>
-          <h2>Long-form stack overview</h2>
+          <h2>Core platforms and delivery stack</h2>
         </div>
-        <div class="tool-columns">
-          <article class="tool-group cinematic-panel">
-            <h3><i class="ri-cloud-line"></i> Cloud and Platform</h3>
-            <ul class="chips">
-              <li>Kubernetes</li>
-              <li>Docker</li>
-              <li>Docker Compose</li>
-              <li>Helm</li>
-              <li>ArgoCD</li>
-              <li>Portainer</li>
-              <li>Proxmox</li>
+        <div class="skill-cards-grid">
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon aws"><i class="ri-cloud-line"></i></span>
+              <div>
+                <h3>Amazon Web Services (AWS)</h3>
+                <p>Expert-level AWS cloud architecture, migration, and cost optimization strategies.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-server-line"></i>EC2</li>
+              <li><i class="ri-database-2-line"></i>RDS</li>
+              <li><i class="ri-hard-drive-3-line"></i>S3</li>
+              <li><i class="ri-router-line"></i>VPC</li>
+              <li><i class="ri-terminal-box-line"></i>Lambda</li>
+              <li><i class="ri-scales-3-line"></i>ELB</li>
             </ul>
           </article>
-          <article class="tool-group cinematic-panel">
-            <h3><i class="ri-git-branch-line"></i> CI/CD and Delivery</h3>
-            <ul class="chips">
-              <li>GitLab CI/CD</li>
-              <li>Jenkins</li>
-              <li>Nexus</li>
-              <li>SonarQube</li>
-              <li>JMeter</li>
-              <li>Fastlane</li>
-              <li>Postman</li>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon azure"><i class="ri-windows-fill"></i></span>
+              <div>
+                <h3>Azure DevOps and Cloud</h3>
+                <p>Comprehensive Azure DevOps implementation for enterprise-level CI/CD workflows.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-git-repository-line"></i>Azure Repos</li>
+              <li><i class="ri-flow-chart"></i>Azure Pipelines</li>
+              <li><i class="ri-task-line"></i>Azure Boards</li>
+              <li><i class="ri-archive-line"></i>Artifacts</li>
+              <li><i class="ri-cloudy-line"></i>Azure VMs</li>
+              <li><i class="ri-database-2-line"></i>Azure SQL</li>
             </ul>
           </article>
-          <article class="tool-group cinematic-panel">
-            <h3><i class="ri-shield-keyhole-line"></i> Security and Compliance</h3>
-            <ul class="chips">
-              <li>Trivy</li>
-              <li>OPA</li>
-              <li>Falco</li>
-              <li>HashiCorp Vault</li>
-              <li>Wazuh</li>
-              <li>Policy as Code</li>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon github"><i class="ri-github-fill"></i></span>
+              <div>
+                <h3>GitHub and Version Control</h3>
+                <p>Advanced Git workflows, GitHub Actions, and collaborative development practices.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-git-branch-line"></i>Git</li>
+              <li><i class="ri-robot-line"></i>GitHub Actions</li>
+              <li><i class="ri-git-merge-line"></i>Branch Policies</li>
+              <li><i class="ri-shield-check-line"></i>Security Scans</li>
             </ul>
           </article>
-          <article class="tool-group cinematic-panel">
-            <h3><i class="ri-line-chart-line"></i> Monitoring and Observability</h3>
-            <ul class="chips">
-              <li>Prometheus</li>
-              <li>Grafana</li>
-              <li>Loki</li>
-              <li>Promtail</li>
-              <li>Server Metrics</li>
-              <li>Log Analytics</li>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon jenkins"><i class="ri-hammer-line"></i></span>
+              <div>
+                <h3>Jenkins and CI/CD Tools</h3>
+                <p>Enterprise Jenkins implementation with pipeline as code and distributed builds.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-code-s-slash-line"></i>Pipeline as Code</li>
+              <li><i class="ri-plug-line"></i>Plugins</li>
+              <li><i class="ri-share-forward-2-line"></i>Distributed Builds</li>
+              <li><i class="ri-notification-3-line"></i>Notifications</li>
             </ul>
           </article>
-          <article class="tool-group cinematic-panel">
-            <h3><i class="ri-code-s-slash-line"></i> Development Frameworks</h3>
-            <ul class="chips">
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>NestJS</li>
-              <li>Laravel Lumen</li>
-              <li>Flutter</li>
-              <li>Spring Boot</li>
-              <li>Go-Gin</li>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon docker"><i class="ri-ship-2-line"></i></span>
+              <div>
+                <h3>Docker and Containerization</h3>
+                <p>Container orchestration, multi-stage builds, and hardened runtime practices.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-box-3-line"></i>Docker</li>
+              <li><i class="ri-stack-line"></i>Multi-stage Builds</li>
+              <li><i class="ri-store-2-line"></i>Registry</li>
+              <li><i class="ri-layout-grid-line"></i>Compose</li>
             </ul>
           </article>
-          <article class="tool-group cinematic-panel">
-            <h3><i class="ri-database-2-line"></i> Databases and Data</h3>
-            <ul class="chips">
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-              <li>SQL Server</li>
-              <li>NoSQL Patterns</li>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon k8s"><i class="ri-steering-2-line"></i></span>
+              <div>
+                <h3>Kubernetes and Orchestration</h3>
+                <p>Production-grade Kubernetes cluster management, networking, and security.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-cluster-line"></i>K8s Clusters</li>
+              <li><i class="ri-stack-line"></i>Helm Charts</li>
+              <li><i class="ri-shield-keyhole-line"></i>RBAC</li>
+              <li><i class="ri-line-chart-line"></i>Monitoring</li>
+            </ul>
+          </article>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon splunk"><i class="ri-bar-chart-box-line"></i></span>
+              <div>
+                <h3>Monitoring and Analytics</h3>
+                <p>Advanced log analysis, dashboards, alerting, and operational intelligence workflows.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-search-line"></i>Log Analysis</li>
+              <li><i class="ri-dashboard-line"></i>Dashboards</li>
+              <li><i class="ri-alarm-warning-line"></i>Alerts</li>
+              <li><i class="ri-code-line"></i>SPL Queries</li>
+            </ul>
+          </article>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon iac"><i class="ri-stack-line"></i></span>
+              <div>
+                <h3>Infrastructure as Code</h3>
+                <p>Terraform, CloudFormation, and automation templates for reproducible infrastructure.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-box-3-line"></i>Terraform</li>
+              <li><i class="ri-cloud-line"></i>CloudFormation</li>
+              <li><i class="ri-file-list-3-line"></i>ARM Templates</li>
+              <li><i class="ri-settings-4-line"></i>Ansible</li>
+            </ul>
+          </article>
+
+          <article class="skill-card cinematic-panel">
+            <div class="skill-head">
+              <span class="skill-icon mule"><i class="ri-plug-2-line"></i></span>
+              <div>
+                <h3>API and Integration Platform</h3>
+                <p>API management, enterprise integration patterns, and secure service connectivity.</p>
+              </div>
+            </div>
+            <ul class="skill-badges">
+              <li><i class="ri-exchange-line"></i>API Gateway</li>
+              <li><i class="ri-git-merge-line"></i>ESB Patterns</li>
+              <li><i class="ri-donut-chart-line"></i>DataWeave</li>
+              <li><i class="ri-shield-check-line"></i>API Security</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section id="experience" class="reveal" data-delay="0" data-motion="left">
+      <section id="experience" class="reveal" data-delay="160" data-duration="700" data-motion="left">
         <div class="section-heading">
           <p class="eyebrow">Work Experience</p>
-          <h2>Hands-on delivery across DevOps roles</h2>
+          <h2>Building the future one deployment at a time</h2>
         </div>
-        <div class="timeline">
-          <article>
+        <div class="experience-grid">
+          <article class="experience-card cinematic-panel">
             <span>Sep 2025 - Present</span>
-            <h3>DevOps Engineer - Informatica Soluzioni Aziendali (ISA), Ragusa</h3>
-            <p>3-tier PERN platform design, full ecosystem containerization, GitOps delivery on Kubernetes, and observability stack with Loki and Grafana.</p>
+            <h3>DevOps Engineer - ISA, Ragusa</h3>
+            <p>Designing and operating 3-tier platforms with containerized workloads, GitOps delivery, and observability integration.</p>
+            <ul class="chips">
+              <li>Kubernetes</li>
+              <li>ArgoCD</li>
+              <li>Nexus</li>
+              <li>Grafana</li>
+              <li>Loki</li>
+            </ul>
           </article>
-          <article>
+          <article class="experience-card cinematic-panel">
             <span>Jan 2025 - Sep 2025</span>
-            <h3>DevOps Engineer - Nouvelair, Monastir</h3>
-            <p>Built a complete DevSecOps pipeline with tests, quality analysis, OPA policies, Trivy scanning, Falco runtime security, Helm deployment, and Vault secrets.</p>
+            <h3>DevOps Engineer - Nouvelair</h3>
+            <p>Implemented DevSecOps pipelines with policy checks, image scanning, runtime security, and secure secrets handling.</p>
+            <ul class="chips">
+              <li>Jenkins</li>
+              <li>OPA</li>
+              <li>Trivy</li>
+              <li>Falco</li>
+              <li>Vault</li>
+            </ul>
           </article>
-          <article>
-            <span>Jun 2024 - Sep 2024</span>
-            <h3>DevOps Engineer - Artificial Insight, Tunis</h3>
-            <p>Implemented CI/CD pipelines across Next.js, NestJS, Spring Boot, Angular, Flutter, Lumen, and Go-Gin with SonarQube and Nexus integration.</p>
-          </article>
-          <article>
-            <span>Jun 2024 - Jun 2024</span>
-            <h3>Junior Software Engineer - Mobilite, Monastir</h3>
-            <p>Developed secure MERN authentication and role-based access (Superadmin, Admin, Developer), plus REST APIs and profile management.</p>
-          </article>
-          <article>
-            <span>Jan 2023 - Aug 2023</span>
-            <h3>DevOps Engineer - Quantum Solutions, Tunis</h3>
-            <p>Created CI and CD pipelines for Laravel and Next.js, automating tests, linting, code quality gates, and staged deployments.</p>
-          </article>
-          <article>
-            <span>2022</span>
-            <h3>IT Technician - Sartex Group and SOPAT</h3>
-            <p>Network and server configuration, Windows administration, hardware support, and LAN/WAN infrastructure operations.</p>
+          <article class="experience-card cinematic-panel">
+            <span>2024 - 2025</span>
+            <h3>DevOps Engineer - Artificial Insight</h3>
+            <p>Delivered CI/CD automation across multiple stacks with quality gates, artifact management, and deployment governance.</p>
+            <ul class="chips">
+              <li>GitLab CI/CD</li>
+              <li>SonarQube</li>
+              <li>Nexus</li>
+              <li>Docker</li>
+            </ul>
           </article>
         </div>
       </section>
 
-      <section id="achievements" class="reveal" data-delay="0" data-motion="right">
-        <div class="section-heading">
-          <p class="eyebrow">Key Achievements</p>
-          <h2>High-impact delivery highlights</h2>
-        </div>
-        <div class="achievement-grid">
-          <article>
-            <i class="ri-rocket-2-line"></i>
-            <h3>End-to-end DevSecOps</h3>
-            <p>Delivered complete CI/CD and security workflows from testing to hardened Kubernetes deployment.</p>
-          </article>
-          <article>
-            <i class="ri-server-line"></i>
-            <h3>Cloud-native operation</h3>
-            <p>Containerized full business ecosystems and operated production-like workloads on Kubernetes clusters.</p>
-          </article>
-          <article>
-            <i class="ri-bar-chart-box-line"></i>
-            <h3>Observability by design</h3>
-            <p>Implemented practical monitoring and log analysis to improve diagnostics and system reliability.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="certifications" class="reveal" data-delay="0" data-motion="left">
+      <section id="certifications" class="reveal" data-delay="200" data-duration="760" data-motion="left">
         <div class="section-heading">
           <p class="eyebrow">Credentials</p>
-          <h2>Education and certifications track</h2>
+          <h2>Licenses and certifications</h2>
         </div>
-        <div class="cert-grid">
-          <article>
-            <h3>Master in Systems, Networks and Cloud Computing</h3>
-            <p>Faculty of Sciences, Sfax</p>
-            <span>2023 - 2025</span>
-          </article>
-          <article>
-            <h3>Engineering Degree in Computer Science</h3>
-            <p>Faculty of Sciences, Sfax</p>
-            <span>2020 - 2023</span>
-          </article>
-          <article>
-            <h3>CKA Learning Path</h3>
-            <p>Hands-on preparation based on Kubernetes Administrator practice labs.</p>
-            <span>Applied track</span>
-          </article>
-          <article>
-            <h3>DevSecOps Specialization</h3>
-            <p>Pipeline security with OPA, Trivy, Falco, Vault, SonarQube, and compliance checks.</p>
-            <span>Applied track</span>
-          </article>
-        </div>
+        <p class="section-intro cert-intro">
+          Certifications imported in the same card style as your LinkedIn profile. Update links anytime in script.js.
+        </p>
+        <div id="certificationGrid" class="cert-grid cert-card-grid" aria-live="polite"></div>
       </section>
 
-      <section id="education" class="reveal" data-delay="0" data-motion="right">
+      <section id="education" class="reveal" data-delay="240" data-duration="680" data-motion="right">
         <div class="section-heading">
           <p class="eyebrow">Academic Foundation</p>
           <h2>Education and language profile</h2>
         </div>
-        <div class="cert-grid">
+        <div class="education-grid">
           <article>
             <h3>Master in Systems, Networks and Cloud Computing</h3>
             <p>Faculty of Sciences, Sfax</p>
@@ -412,59 +353,30 @@
             <span>2020 - 2023</span>
           </article>
           <article>
-            <h3>Languages</h3>
-            <p>Arabic native, French B1, English B1, Italian A2.</p>
-            <span>Multilingual collaboration</span>
+            <h3>Languages and Collaboration</h3>
+            <p>Arabic (native), French (B1), English (B1), Italian (A2).</p>
+            <span>Multilingual profile</span>
           </article>
         </div>
       </section>
 
-      <section id="linkedin-projects" class="reveal" data-delay="0" data-motion="left">
-        <div class="section-heading">
-          <p class="eyebrow">LinkedIn Projects</p>
-          <h2>Projects curated from your LinkedIn profile</h2>
-        </div>
-        <p class="section-intro">
-          Add or edit your complete LinkedIn project list in script.js inside linkedinProjects.
-        </p>
-        <div id="linkedinProjectGrid" class="repo-grid" aria-live="polite"></div>
-      </section>
-
-      <section id="projects" class="reveal" data-delay="0" data-motion="right">
-        <div class="section-heading">
-          <p class="eyebrow">GitHub Projects</p>
-          <h2>Dynamic repositories from API</h2>
-        </div>
-        <p class="section-intro">Latest public repositories are loaded automatically from your GitHub profile.</p>
-        <div id="repoGrid" class="repo-grid" aria-live="polite">
-          <article class="repo-card skeleton">
-            <h3>Loading repositories...</h3>
-            <p>Please wait while the GitHub API data is being fetched.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="contact reveal" data-delay="0" data-motion="up">
+      <section id="contact" class="contact reveal" data-delay="280" data-duration="760" data-motion="up">
         <div class="section-heading center">
           <p class="eyebrow">Contact</p>
-          <h2>Ready to build something reliable?</h2>
+          <h2>Ready to build something amazing?</h2>
         </div>
         <div class="contact-grid">
           <a href="mailto:wissemsghaier866@gmail.com">
             <i class="ri-mail-line"></i>
-            <span>wissemsghaier866@gmail.com</span>
+            <span>Send Email</span>
           </a>
           <a href="tel:+393933134502">
             <i class="ri-phone-line"></i>
-            <span>+39 3933134502</span>
+            <span>Call me</span>
           </a>
           <a href="https://www.linkedin.com/in/sghaier-wissem/" target="_blank" rel="noreferrer">
             <i class="ri-linkedin-box-line"></i>
-            <span>LinkedIn Profile</span>
-          </a>
-          <a href="https://github.com/wissemsghaier" target="_blank" rel="noreferrer">
-            <i class="ri-github-line"></i>
-            <span>GitHub Profile</span>
+            <span>Connect on LinkedIn</span>
           </a>
         </div>
       </section>
