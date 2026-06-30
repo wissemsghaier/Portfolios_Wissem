@@ -875,6 +875,13 @@ function renderCertifications() {
     return;
   }
 
+  const toViewerUrl = (pdfUrl) => {
+    if (!pdfUrl) {
+      return "#";
+    }
+    return `https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(pdfUrl)}`;
+  };
+
   if (certifications.length === 0) {
     certificationGrid.innerHTML = `
       <article class="cert-card">
@@ -920,7 +927,7 @@ function renderCertifications() {
             ${expiresMarkup}
           </ul>
           ${skillsMarkup}
-          <a class="cert-link" href="${certificate.credentialUrl}" target="_blank" rel="noreferrer">
+          <a class="cert-link" href="${toViewerUrl(certificate.credentialUrl)}" target="_blank" rel="noreferrer">
             <i class="ri-external-link-line"></i>
             ${t("showCredential")}
           </a>
