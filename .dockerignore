@@ -1,4 +1,5 @@
 *.pdf
+!Wissem-Curriculum.pdf
 *.txt
 .git
 .gitignore
