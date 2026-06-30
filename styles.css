@@ -128,12 +128,20 @@ body::before {
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   background: linear-gradient(140deg, #4f6fff, #4f8eff);
   box-shadow: 0 12px 24px rgba(64, 108, 255, 0.4);
+  border: 1px solid rgba(142, 188, 255, 0.4);
+}
+
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .brand-text {
@@ -2134,11 +2142,19 @@ section h3 {
   width: 18px;
   height: 18px;
   border-radius: 5px;
-  display: grid;
-  place-items: center;
-  font-size: 0.5rem;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   background: linear-gradient(140deg, #4f6fff, #4f8eff);
+  border: 1px solid rgba(142, 188, 255, 0.4);
+}
+
+.footer-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .footer-text {
