@@ -20,7 +20,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="styles.css?v=20260630" />
+    <link rel="stylesheet" href="styles.css?v=20260630-3" />
   </head>
   <body data-github-user="wissemsghaier">
     <div class="bg-orb orb-1"></div>
@@ -33,7 +33,27 @@
         <span class="brand-text">Wissem Sghaier</span>
       </a>
       <div class="topbar-right">
-        <nav class="main-nav" aria-label="Main navigation">
+        <div class="topbar-controls">
+          <div class="lang-switcher">
+            <label class="sr-only" for="langSelect">Select language</label>
+            <select id="langSelect" class="lang-select" aria-label="Select language">
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="it">IT</option>
+            </select>
+          </div>
+          <button
+            id="navToggle"
+            class="nav-toggle"
+            type="button"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <i class="ri-menu-line" aria-hidden="true"></i>
+          </button>
+        </div>
+        <nav id="mainNav" class="main-nav" aria-label="Main navigation">
           <a class="nav-link" href="#home">Home</a>
           <a class="nav-link" href="#about">About</a>
           <a class="nav-link" href="#skills">Skills</a>
@@ -41,14 +61,6 @@
           <a class="nav-link" href="#certifications">Certifications</a>
           <a class="nav-link" href="#contact">Contact</a>
         </nav>
-        <div class="lang-switcher">
-          <label class="sr-only" for="langSelect">Select language</label>
-          <select id="langSelect" class="lang-select" aria-label="Select language">
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-            <option value="it">IT</option>
-          </select>
-        </div>
       </div>
     </header>
 
@@ -164,7 +176,7 @@
         </div>
       </section>
 
-      <section id="skills" class="reveal" data-delay="120" data-duration="720" data-motion="left">
+      <section id="skills" class="reveal section-cinematic section-skills" data-delay="120" data-duration="720" data-motion="left">
         <div class="section-heading skills-heading">
           <p class="eyebrow"><i class="ri-star-s-fill"></i> Tools &amp; Technologies</p>
         </div>
@@ -390,7 +402,7 @@
         </div>
       </section>
 
-      <section id="experience" class="experience-showcase reveal" data-delay="160" data-duration="700" data-motion="left">
+      <section id="experience" class="experience-showcase reveal section-cinematic section-experience" data-delay="160" data-duration="700" data-motion="left">
         <div class="section-heading center experience-heading">
           <p class="eyebrow">Work Experience</p>
           <h2>Building the future<br /><span>one deployment at a time</span></h2>
@@ -399,7 +411,7 @@
         <div id="experienceGrid" class="experience-grid" aria-live="polite"></div>
       </section>
 
-      <section id="certifications" class="cert-showcase reveal" data-delay="200" data-duration="760" data-motion="left">
+      <section id="certifications" class="cert-showcase reveal section-cinematic section-certifications" data-delay="200" data-duration="760" data-motion="left">
         <div class="section-heading center cert-heading">
           <p class="eyebrow">Credentials</p>
           <h2>Licenses and<br /><span>certifications</span></h2>
@@ -495,6 +507,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260630"></script>
+    <script src="script.js?v=20260630-3"></script>
   </body>
 </html>

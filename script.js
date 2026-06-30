@@ -73,6 +73,8 @@ const TRANSLATIONS = {
     independent: "Independent",
     mixed: "Mixed",
     projectLabel: "Project",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
     yearsAgo: "y ago",
     monthsAgo: "mo ago",
     daysAgo: "d ago"
@@ -146,6 +148,8 @@ const TRANSLATIONS = {
     independent: "Independant",
     mixed: "Mixte",
     projectLabel: "Projet",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
     yearsAgo: "a",
     monthsAgo: "mo",
     daysAgo: "j"
@@ -219,6 +223,8 @@ const TRANSLATIONS = {
     independent: "Indipendente",
     mixed: "Misto",
     projectLabel: "Progetto",
+    openMenu: "Apri menu",
+    closeMenu: "Chiudi menu",
     yearsAgo: "a",
     monthsAgo: "m",
     daysAgo: "g"
@@ -266,6 +272,12 @@ function applyTranslations() {
   if (langSelect) {
     langSelect.setAttribute("aria-label", "Select language");
     langSelect.value = currentLanguage;
+  }
+
+  const navToggle = document.getElementById("navToggle");
+  if (navToggle) {
+    const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+    navToggle.setAttribute("aria-label", isExpanded ? t("closeMenu") : t("openMenu"));
   }
 
   const updateText = (selector, value) => {
@@ -352,6 +364,46 @@ function setupLanguageSwitcher() {
     currentLanguage = nextLanguage;
     localStorage.setItem(I18N_STORAGE_KEY, currentLanguage);
     applyTranslations();
+  });
+}
+
+function setupMobileNav() {
+  const topbarRight = document.querySelector(".topbar-right");
+  const navToggle = document.getElementById("navToggle");
+  const nav = document.getElementById("mainNav");
+  if (!topbarRight || !navToggle || !nav) {
+    return;
+  }
+
+  const setOpen = (open) => {
+    topbarRight.classList.toggle("nav-open", open);
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? t("closeMenu") : t("openMenu"));
+    const icon = navToggle.querySelector("i");
+    if (icon) {
+      icon.className = open ? "ri-close-line" : "ri-menu-line";
+    }
+  };
+
+  setOpen(false);
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = topbarRight.classList.contains("nav-open");
+    setOpen(!isOpen);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.matchMedia("(max-width: 760px)").matches) {
+        setOpen(false);
+      }
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      setOpen(false);
+    }
   });
 }
 
@@ -605,7 +657,8 @@ function renderExperiences(limit = 6) {
       const accentClass = index % 2 === 1 ? " accent" : "";
 
       return `
-        <article class="experience-card cinematic-panel">
+        <article class="experience-card cinematic-panel timeline-card" style="--i:${index};">
+          <span class="experience-timeline-marker" aria-hidden="true"></span>
           <div class="experience-top">
             <span class="experience-emblem${accentClass}"><i class="${item.icon || "ri-briefcase-line"}"></i></span>
             <div>
@@ -1034,12 +1087,43 @@ function applyTiltEffects(scope = document) {
   });
 }
 
+function setupScrollProgress() {
+  const root = document.documentElement;
+
+  const updateProgress = () => {
+    const scrollTop = root.scrollTop || document.body.scrollTop || 0;
+    const scrollHeight = Math.max(1, root.scrollHeight - root.clientHeight);
+    const progress = Math.max(0, Math.min(1, scrollTop / scrollHeight));
+    root.style.setProperty("--scroll-progress", progress.toFixed(4));
+  };
+
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+}
+
+function ensureCardVisibilityFallback() {
+  window.setTimeout(() => {
+    const revealed = document.querySelectorAll(".card-animate.card-in-view").length;
+    if (revealed > 0) {
+      return;
+    }
+
+    document.querySelectorAll(".card-animate").forEach((card) => {
+      card.classList.add("card-in-view");
+    });
+  }, 950);
+}
+
 renderExperiences(6);
 registerCardAnimations();
 applyTiltEffects();
 renderCertifications();
+setupScrollProgress();
+setupMobileNav();
 setupLanguageSwitcher();
 applyTranslations();
+ensureCardVisibilityFallback();
 loadGitHubProfile().catch(() => {});
 normalizeSkillCardHeights();
 
