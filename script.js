@@ -3,6 +3,358 @@ if (yearElement) {
   yearElement.textContent = String(new Date().getFullYear());
 }
 
+const TRANSLATIONS = {
+  en: {
+    htmlLang: "en",
+    title: "Wissem Sghaier | DevOps Engineer",
+    metaDescription:
+      "Wissem Sghaier - DevOps Engineer portfolio. CI/CD, Kubernetes, Docker, GitOps, observability, and cloud automation.",
+    navHome: "Home",
+    navAbout: "About",
+    navSkills: "Skills",
+    navExperience: "Experience",
+    navCertifications: "Certifications",
+    navContact: "Contact",
+    heroGreeting: "Hello, I'm",
+    heroRole: "DevOps Engineer",
+    homeAboutTitle: "About Me",
+    homeAboutText: "With practical cloud and CI/CD experience, I help teams scale and deploy with confidence.",
+    homeWhatTitle: "What I Do",
+    homeWhatText: "I deliver secure pipelines and automation workflows for reliable software delivery across domains.",
+    homePassionTitle: "My Passion",
+    homePassionText: "I continuously learn emerging DevOps tools to build resilient and innovative platforms.",
+    homeCta: "Let's Connect",
+    aboutEyebrow: "About Me",
+    aboutHeadingHtml: "Meet your next <span class=\"gradient-text\">DevOps partner</span>",
+    aboutSubline:
+      "Hands-on DevOps experience delivering scalable infrastructure and automation solutions for modern applications.",
+    aboutStoryTitle: "DevOps Engineer",
+    aboutStoryP1:
+      "I am an experienced DevOps Engineer focused on secure CI/CD, container orchestration, and platform automation across modern cloud-native environments.",
+    aboutStoryP2:
+      "My work combines release engineering, observability, and DevSecOps practices to deliver resilient infrastructures and reliable software delivery workflows.",
+    skillsEyebrow: "Tools & Technologies",
+    experienceEyebrow: "Work Experience",
+    experienceHeadingHtml: "Building the future<br /><span>one deployment at a time</span>",
+    experienceSubline: "Experiences imported from LinkedIn profile, showing the 6 most recent roles.",
+    certificationsEyebrow: "Credentials",
+    certificationsHeadingHtml: "Licenses and<br /><span>certifications</span>",
+    certificationsIntro: "Professional certifications validating expertise in cloud platforms and DevOps practices.",
+    academicEyebrow: "Academic",
+    academicHeadingHtml: "Academic<br /><span>foundation</span>",
+    academicMasterTitle: "Master in Systems, Networks and Cloud Computing",
+    academicMasterDesc:
+      "Specialized in cloud architectures, distributed systems, and modern infrastructure operations with a practical focus on DevOps and automation.",
+    academicEngTitle: "Engineering Degree in Computer Science",
+    academicEngDesc:
+      "Strong foundation in software engineering, algorithms, and application design, supporting reliable delivery and problem-solving in production environments.",
+    contactEyebrow: "Let's Connect",
+    contactHeadingHtml: "Ready to build<br /><span>something amazing?</span>",
+    contactSubline: "Let's discuss how my DevOps expertise can accelerate your next project.",
+    contactEmailAction: "Send Email",
+    contactLinkedinAction: "Connect on LinkedIn",
+    contactLocationAction: "View map",
+    footerRole: "DevOps Engineer",
+    verified: "Verified",
+    issued: "Issued",
+    expires: "Expires",
+    skillsLabel: "Skills",
+    showCredential: "Show credential",
+    noCertificationsYet: "No certifications yet",
+    addCertificationsHint: "Add your certifications in the certifications array inside script.js.",
+    noExperienceDataYet: "No experience data available yet. Update linkedinExperiences in script.js.",
+    noDescription: "No description provided.",
+    openRepository: "Open repository",
+    noLinkedinProjects: "No LinkedIn projects added yet",
+    editLinkedinProjects: "Edit the linkedinProjects array in script.js to add your project history.",
+    openOnLinkedin: "Open on LinkedIn",
+    profileDefaultRole: "DevOps Engineer",
+    profileDefaultLocation: "Italy",
+    independent: "Independent",
+    mixed: "Mixed",
+    projectLabel: "Project",
+    yearsAgo: "y ago",
+    monthsAgo: "mo ago",
+    daysAgo: "d ago"
+  },
+  fr: {
+    htmlLang: "fr",
+    title: "Wissem Sghaier | Ingenieur DevOps",
+    metaDescription:
+      "Portfolio de Wissem Sghaier - Ingenieur DevOps. CI/CD, Kubernetes, Docker, GitOps, observabilite et automatisation cloud.",
+    navHome: "Accueil",
+    navAbout: "A propos",
+    navSkills: "Competences",
+    navExperience: "Experience",
+    navCertifications: "Certifications",
+    navContact: "Contact",
+    heroGreeting: "Bonjour, je suis",
+    heroRole: "Ingenieur DevOps",
+    homeAboutTitle: "A propos de moi",
+    homeAboutText: "Avec une experience pratique du cloud et du CI/CD, j'aide les equipes a monter en charge et deployer avec confiance.",
+    homeWhatTitle: "Ce que je fais",
+    homeWhatText: "Je livre des pipelines securises et des workflows d'automatisation pour une livraison logicielle fiable.",
+    homePassionTitle: "Ma passion",
+    homePassionText: "J'apprends en continu les outils DevOps emergents pour construire des plateformes resilientes et innovantes.",
+    homeCta: "Connectons-nous",
+    aboutEyebrow: "A propos",
+    aboutHeadingHtml: "Votre prochain <span class=\"gradient-text\">partenaire DevOps</span>",
+    aboutSubline:
+      "Experience DevOps terrain pour livrer des infrastructures evolutives et des solutions d'automatisation pour des applications modernes.",
+    aboutStoryTitle: "Ingenieur DevOps",
+    aboutStoryP1:
+      "Je suis un ingenieur DevOps experimente, focalise sur le CI/CD securise, l'orchestration de conteneurs et l'automatisation de plateformes cloud-native.",
+    aboutStoryP2:
+      "Mon travail combine release engineering, observabilite et pratiques DevSecOps pour livrer des infrastructures resilientes et des workflows fiables.",
+    skillsEyebrow: "Outils et technologies",
+    experienceEyebrow: "Experience professionnelle",
+    experienceHeadingHtml: "Construire le futur<br /><span>deploiement apres deploiement</span>",
+    experienceSubline: "Experiences importees depuis LinkedIn, affichant les 6 roles les plus recents.",
+    certificationsEyebrow: "Diplomes",
+    certificationsHeadingHtml: "Licences et<br /><span>certifications</span>",
+    certificationsIntro: "Certifications professionnelles validant l'expertise en cloud et en pratiques DevOps.",
+    academicEyebrow: "Academique",
+    academicHeadingHtml: "Base<br /><span>academique</span>",
+    academicMasterTitle: "Master en Systemes, Reseaux et Cloud Computing",
+    academicMasterDesc:
+      "Specialisation en architectures cloud, systemes distribues et operations d'infrastructure modernes avec un focus pratique DevOps et automatisation.",
+    academicEngTitle: "Diplome d'ingenieur en informatique",
+    academicEngDesc:
+      "Solide base en genie logiciel, algorithmes et conception applicative, au service d'une livraison fiable en production.",
+    contactEyebrow: "Contact",
+    contactHeadingHtml: "Pret a construire<br /><span>quelque chose d'exceptionnel ?</span>",
+    contactSubline: "Discutons de la facon dont mon expertise DevOps peut accelerer votre prochain projet.",
+    contactEmailAction: "Envoyer un email",
+    contactLinkedinAction: "Me contacter sur LinkedIn",
+    contactLocationAction: "Voir la carte",
+    footerRole: "Ingenieur DevOps",
+    verified: "Verifie",
+    issued: "Delivre",
+    expires: "Expire",
+    skillsLabel: "Competences",
+    showCredential: "Voir le certificat",
+    noCertificationsYet: "Aucune certification pour le moment",
+    addCertificationsHint: "Ajoutez vos certifications dans le tableau certifications de script.js.",
+    noExperienceDataYet: "Aucune experience disponible. Mettez a jour linkedinExperiences dans script.js.",
+    noDescription: "Aucune description fournie.",
+    openRepository: "Ouvrir le depot",
+    noLinkedinProjects: "Aucun projet LinkedIn ajoute",
+    editLinkedinProjects: "Modifiez le tableau linkedinProjects dans script.js pour ajouter votre historique.",
+    openOnLinkedin: "Ouvrir sur LinkedIn",
+    profileDefaultRole: "Ingenieur DevOps",
+    profileDefaultLocation: "Italie",
+    independent: "Independant",
+    mixed: "Mixte",
+    projectLabel: "Projet",
+    yearsAgo: "a",
+    monthsAgo: "mo",
+    daysAgo: "j"
+  },
+  it: {
+    htmlLang: "it",
+    title: "Wissem Sghaier | Ingegnere DevOps",
+    metaDescription:
+      "Portfolio di Wissem Sghaier - Ingegnere DevOps. CI/CD, Kubernetes, Docker, GitOps, osservabilita e automazione cloud.",
+    navHome: "Home",
+    navAbout: "Chi sono",
+    navSkills: "Competenze",
+    navExperience: "Esperienza",
+    navCertifications: "Certificazioni",
+    navContact: "Contatto",
+    heroGreeting: "Ciao, sono",
+    heroRole: "Ingegnere DevOps",
+    homeAboutTitle: "Chi sono",
+    homeAboutText: "Con esperienza pratica in cloud e CI/CD, aiuto i team a scalare e distribuire con fiducia.",
+    homeWhatTitle: "Cosa faccio",
+    homeWhatText: "Realizzo pipeline sicure e workflow di automazione per una delivery software affidabile.",
+    homePassionTitle: "La mia passione",
+    homePassionText: "Studio continuamente strumenti DevOps emergenti per creare piattaforme resilienti e innovative.",
+    homeCta: "Restiamo in contatto",
+    aboutEyebrow: "Chi sono",
+    aboutHeadingHtml: "Il tuo prossimo <span class=\"gradient-text\">partner DevOps</span>",
+    aboutSubline:
+      "Esperienza DevOps pratica nel fornire infrastrutture scalabili e soluzioni di automazione per applicazioni moderne.",
+    aboutStoryTitle: "Ingegnere DevOps",
+    aboutStoryP1:
+      "Sono un Ingegnere DevOps con esperienza, focalizzato su CI/CD sicuro, orchestrazione di container e automazione di piattaforme cloud-native.",
+    aboutStoryP2:
+      "Il mio lavoro unisce release engineering, osservabilita e pratiche DevSecOps per infrastrutture resilienti e delivery affidabile.",
+    skillsEyebrow: "Strumenti e tecnologie",
+    experienceEyebrow: "Esperienza lavorativa",
+    experienceHeadingHtml: "Costruire il futuro<br /><span>un deployment alla volta</span>",
+    experienceSubline: "Esperienze importate da LinkedIn, con i 6 ruoli piu recenti.",
+    certificationsEyebrow: "Credenziali",
+    certificationsHeadingHtml: "Licenze e<br /><span>certificazioni</span>",
+    certificationsIntro: "Certificazioni professionali che convalidano competenze in cloud e pratiche DevOps.",
+    academicEyebrow: "Formazione",
+    academicHeadingHtml: "Base<br /><span>accademica</span>",
+    academicMasterTitle: "Master in Sistemi, Reti e Cloud Computing",
+    academicMasterDesc:
+      "Specializzazione in architetture cloud, sistemi distribuiti e operazioni infrastrutturali moderne con focus pratico su DevOps e automazione.",
+    academicEngTitle: "Laurea in Ingegneria Informatica",
+    academicEngDesc:
+      "Solida base in ingegneria del software, algoritmi e progettazione applicativa per una delivery affidabile in produzione.",
+    contactEyebrow: "Contatto",
+    contactHeadingHtml: "Pronto a costruire<br /><span>qualcosa di straordinario?</span>",
+    contactSubline: "Parliamo di come la mia esperienza DevOps puo accelerare il tuo prossimo progetto.",
+    contactEmailAction: "Invia email",
+    contactLinkedinAction: "Connettiti su LinkedIn",
+    contactLocationAction: "Apri mappa",
+    footerRole: "Ingegnere DevOps",
+    verified: "Verificato",
+    issued: "Rilasciato",
+    expires: "Scade",
+    skillsLabel: "Competenze",
+    showCredential: "Mostra certificato",
+    noCertificationsYet: "Nessuna certificazione al momento",
+    addCertificationsHint: "Aggiungi le certificazioni nell'array certifications dentro script.js.",
+    noExperienceDataYet: "Nessuna esperienza disponibile. Aggiorna linkedinExperiences in script.js.",
+    noDescription: "Nessuna descrizione disponibile.",
+    openRepository: "Apri repository",
+    noLinkedinProjects: "Nessun progetto LinkedIn aggiunto",
+    editLinkedinProjects: "Modifica l'array linkedinProjects in script.js per aggiungere la tua storia progetti.",
+    openOnLinkedin: "Apri su LinkedIn",
+    profileDefaultRole: "Ingegnere DevOps",
+    profileDefaultLocation: "Italia",
+    independent: "Indipendente",
+    mixed: "Misto",
+    projectLabel: "Progetto",
+    yearsAgo: "a",
+    monthsAgo: "m",
+    daysAgo: "g"
+  }
+};
+
+const I18N_STORAGE_KEY = "portfolio-lang";
+let currentLanguage = localStorage.getItem(I18N_STORAGE_KEY) || "en";
+if (!TRANSLATIONS[currentLanguage]) {
+  currentLanguage = "en";
+}
+
+function t(key) {
+  const pack = TRANSLATIONS[currentLanguage] || TRANSLATIONS.en;
+  return pack[key] || TRANSLATIONS.en[key] || "";
+}
+
+function applyTranslations() {
+  const html = document.documentElement;
+  html.lang = t("htmlLang") || "en";
+
+  document.title = t("title");
+
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute("content", t("metaDescription"));
+  }
+
+  const navLinks = document.querySelectorAll(".main-nav .nav-link");
+  if (navLinks.length >= 6) {
+    navLinks[0].textContent = t("navHome");
+    navLinks[1].textContent = t("navAbout");
+    navLinks[2].textContent = t("navSkills");
+    navLinks[3].textContent = t("navExperience");
+    navLinks[4].textContent = t("navCertifications");
+    navLinks[5].textContent = t("navContact");
+  }
+
+  const label = document.querySelector('label[for="langSelect"]');
+  if (label) {
+    label.textContent = "Select language";
+  }
+
+  const langSelect = document.getElementById("langSelect");
+  if (langSelect) {
+    langSelect.setAttribute("aria-label", "Select language");
+    langSelect.value = currentLanguage;
+  }
+
+  const updateText = (selector, value) => {
+    const node = document.querySelector(selector);
+    if (node) {
+      node.textContent = value;
+    }
+  };
+
+  const updateHtml = (selector, value) => {
+    const node = document.querySelector(selector);
+    if (node) {
+      node.innerHTML = value;
+    }
+  };
+
+  updateText(".hero-greeting", t("heroGreeting"));
+  updateText(".hero-role", t("heroRole"));
+  updateText(".home-mini-card:nth-of-type(1) .home-mini-head h3", t("homeAboutTitle"));
+  updateText(".home-mini-card:nth-of-type(1) p", t("homeAboutText"));
+  updateText(".home-mini-card:nth-of-type(2) .home-mini-head h3", t("homeWhatTitle"));
+  updateText(".home-mini-card:nth-of-type(2) p", t("homeWhatText"));
+  updateText(".home-mini-card:nth-of-type(3) .home-mini-head h3", t("homePassionTitle"));
+  updateText(".home-mini-card:nth-of-type(3) p", t("homePassionText"));
+  updateText(".home-cta-row .home-action", t("homeCta"));
+
+  updateText(".about-showcase-head .eyebrow", t("aboutEyebrow"));
+  updateHtml(".about-showcase-head h2", t("aboutHeadingHtml"));
+  updateText(".about-showcase-sub", t("aboutSubline"));
+  updateText(".about-story-tile h3", t("aboutStoryTitle"));
+  const storyParagraphs = document.querySelectorAll(".about-story-tile p");
+  if (storyParagraphs[0]) {
+    storyParagraphs[0].textContent = t("aboutStoryP1");
+  }
+  if (storyParagraphs[1]) {
+    storyParagraphs[1].textContent = t("aboutStoryP2");
+  }
+
+  updateText(".skills-heading .eyebrow", t("skillsEyebrow"));
+
+  updateText(".experience-heading .eyebrow", t("experienceEyebrow"));
+  updateHtml(".experience-heading h2", t("experienceHeadingHtml"));
+  updateText(".experience-subline", t("experienceSubline"));
+
+  updateText(".cert-heading .eyebrow", t("certificationsEyebrow"));
+  updateHtml(".cert-heading h2", t("certificationsHeadingHtml"));
+  updateText(".cert-intro", t("certificationsIntro"));
+
+  updateText(".cert-academic-heading .eyebrow", t("academicEyebrow"));
+  updateHtml(".cert-academic-heading h2", t("academicHeadingHtml"));
+  updateText(".cert-academic-card:nth-of-type(1) h4", t("academicMasterTitle"));
+  updateText(".cert-academic-card:nth-of-type(1) .cert-academic-desc", t("academicMasterDesc"));
+  updateText(".cert-academic-card:nth-of-type(2) h4", t("academicEngTitle"));
+  updateText(".cert-academic-card:nth-of-type(2) .cert-academic-desc", t("academicEngDesc"));
+
+  updateText(".contact-heading .eyebrow", t("contactEyebrow"));
+  updateHtml(".contact-heading h2", t("contactHeadingHtml"));
+  updateText(".contact-subline", t("contactSubline"));
+  updateText('.contact-card[href^="mailto:"] .contact-action', t("contactEmailAction"));
+  updateText('.contact-card[href*="linkedin.com"] .contact-action', t("contactLinkedinAction"));
+  updateText('.contact-card[href*="maps.google.com"] .contact-action', t("contactLocationAction"));
+
+  const footerRole = document.querySelector(".footer-text small");
+  if (footerRole) {
+    footerRole.textContent = t("footerRole");
+  }
+
+  renderExperiences(6);
+  renderCertifications();
+}
+
+function setupLanguageSwitcher() {
+  const langSelect = document.getElementById("langSelect");
+  if (!langSelect) {
+    return;
+  }
+
+  langSelect.value = currentLanguage;
+  langSelect.addEventListener("change", (event) => {
+    const nextLanguage = event.target.value;
+    if (!TRANSLATIONS[nextLanguage]) {
+      return;
+    }
+    currentLanguage = nextLanguage;
+    localStorage.setItem(I18N_STORAGE_KEY, currentLanguage);
+    applyTranslations();
+  });
+}
+
 const revealElements = document.querySelectorAll(".reveal");
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
@@ -233,7 +585,7 @@ function renderExperiences(limit = 6) {
   if (items.length === 0) {
     experienceGrid.innerHTML = `
       <article class="experience-card cinematic-panel">
-        <p class="experience-summary">No experience data available yet. Update linkedinExperiences in script.js.</p>
+        <p class="experience-summary">${t("noExperienceDataYet")}</p>
       </article>
     `;
     registerCardAnimations(experienceGrid);
@@ -366,19 +718,19 @@ function formatRelativeDate(dateValue) {
 
   if (delta >= year) {
     const years = Math.floor(delta / year);
-    return `${years}y ago`;
+    return `${years}${t("yearsAgo")}`;
   }
   if (delta >= month) {
     const months = Math.floor(delta / month);
-    return `${months}mo ago`;
+    return `${months}${t("monthsAgo")}`;
   }
   const days = Math.max(1, Math.floor(delta / day));
-  return `${days}d ago`;
+  return `${days}${t("daysAgo")}`;
 }
 
 function truncate(text, maxLength) {
   if (!text) {
-    return "No description provided.";
+    return t("noDescription");
   }
   if (text.length <= maxLength) {
     return text;
@@ -394,7 +746,7 @@ function renderRepoCards(repositories) {
 
   const cards = repositories
     .map((repo) => {
-      const language = repo.language || "Mixed";
+      const language = repo.language || t("mixed");
       return `
         <article class="repo-card">
           <div class="repo-top">
@@ -407,7 +759,7 @@ function renderRepoCards(repositories) {
             <span><i class="ri-git-branch-line"></i> ${repo.forks_count}</span>
             <span><i class="ri-time-line"></i> ${formatRelativeDate(repo.pushed_at)}</span>
           </div>
-          <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">Open repository</a>
+          <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noreferrer">${t("openRepository")}</a>
         </article>
       `;
     })
@@ -427,8 +779,8 @@ function renderLinkedInProjects() {
   if (linkedinProjects.length === 0) {
     linkedInGrid.innerHTML = `
       <article class="repo-card">
-        <h3>No LinkedIn projects added yet</h3>
-        <p>Edit the linkedinProjects array in script.js to add your project history.</p>
+        <h3>${t("noLinkedinProjects")}</h3>
+        <p>${t("editLinkedinProjects")}</p>
       </article>
     `;
     registerCardAnimations(linkedInGrid);
@@ -440,18 +792,18 @@ function renderLinkedInProjects() {
     .map((project) => {
       const tags = (project.tags || []).map((tag) => `<li>${tag}</li>`).join("");
       const linkMarkup = project.link
-        ? `<a class="repo-link" href="${project.link}" target="_blank" rel="noreferrer">Open on LinkedIn</a>`
+        ? `<a class="repo-link" href="${project.link}" target="_blank" rel="noreferrer">${t("openOnLinkedin")}</a>`
         : "";
 
       return `
         <article class="repo-card cinematic-panel">
           <div class="repo-top">
             <h3>${project.title}</h3>
-            <span class="repo-lang">${project.period || "Project"}</span>
+            <span class="repo-lang">${project.period || t("projectLabel")}</span>
           </div>
-          <p>${project.description || "No description."}</p>
+          <p>${project.description || t("noDescription")}</p>
           <div class="repo-meta">
-            <span><i class="ri-building-line"></i> ${project.company || "Independent"}</span>
+            <span><i class="ri-building-line"></i> ${project.company || t("independent")}</span>
           </div>
           <ul class="chips">${tags}</ul>
           ${linkMarkup}
@@ -473,8 +825,8 @@ function renderCertifications() {
   if (certifications.length === 0) {
     certificationGrid.innerHTML = `
       <article class="cert-card">
-        <h3>No certifications yet</h3>
-        <p>Add your certifications in the certifications array inside script.js.</p>
+        <h3>${t("noCertificationsYet")}</h3>
+        <p>${t("addCertificationsHint")}</p>
       </article>
     `;
     registerCardAnimations(certificationGrid);
@@ -485,10 +837,10 @@ function renderCertifications() {
   certificationGrid.innerHTML = certifications
     .map((certificate, index) => {
       const expiresMarkup = certificate.expires
-        ? `<li><i class="ri-calendar-check-line"></i> Expires: ${certificate.expires}</li>`
+        ? `<li><i class="ri-calendar-check-line"></i> ${t("expires")}: ${certificate.expires}</li>`
         : "";
       const skillsMarkup = certificate.skills
-        ? `<p class="cert-skills"><strong>Skills:</strong> ${certificate.skills}</p>`
+        ? `<p class="cert-skills"><strong>${t("skillsLabel")}:</strong> ${certificate.skills}</p>`
         : "";
 
       return `
@@ -504,20 +856,20 @@ function renderCertifications() {
               />
               <span class="cert-logo-fallback" aria-hidden="true"><i class="ri-award-line"></i></span>
             </span>
-            <span class="cert-verified"><i class="ri-checkbox-circle-fill"></i>Verified</span>
+            <span class="cert-verified"><i class="ri-checkbox-circle-fill"></i>${t("verified")}</span>
           </div>
           <h3>${certificate.title}</h3>
           <p class="cert-issuer">
             <a href="${certificate.issuerUrl || '#'}" target="_blank" rel="noreferrer">${certificate.issuer}</a>
           </p>
           <ul class="cert-meta">
-            <li><i class="ri-calendar-line"></i> Issued: ${certificate.issued}</li>
+            <li><i class="ri-calendar-line"></i> ${t("issued")}: ${certificate.issued}</li>
             ${expiresMarkup}
           </ul>
           ${skillsMarkup}
           <a class="cert-link" href="${certificate.credentialUrl}" target="_blank" rel="noreferrer">
             <i class="ri-external-link-line"></i>
-            Show credential
+            ${t("showCredential")}
           </a>
         </article>
       `;
@@ -555,10 +907,10 @@ async function loadGitHubProfile() {
     profileName.textContent = profile.name || GITHUB_USERNAME;
   }
   if (profileRole) {
-    profileRole.textContent = profile.company || "DevOps Engineer";
+    profileRole.textContent = profile.company || t("profileDefaultRole");
   }
   if (profileLocation) {
-    profileLocation.textContent = profile.location || "Italy";
+    profileLocation.textContent = profile.location || t("profileDefaultLocation");
   }
   if (statRepos) {
     statRepos.textContent = String(profile.public_repos || 0);
@@ -686,6 +1038,8 @@ renderExperiences(6);
 registerCardAnimations();
 applyTiltEffects();
 renderCertifications();
+setupLanguageSwitcher();
+applyTranslations();
 loadGitHubProfile().catch(() => {});
 normalizeSkillCardHeights();
 
