@@ -13,6 +13,7 @@ const TRANSLATIONS = {
     navAbout: "About",
     navSkills: "Skills",
     navExperience: "Experience",
+    navProjects: "Projects",
     navCertifications: "Certifications",
     navContact: "Contact",
     heroGreeting: "Hello, I'm",
@@ -37,6 +38,14 @@ const TRANSLATIONS = {
     experienceEyebrow: "Work Experience",
     experienceHeadingHtml: "Building the future<br /><span>one deployment at a time</span>",
     experienceSubline: "Experiences imported from LinkedIn profile, showing the 6 most recent roles.",
+    projectsEyebrow: "Selected Work",
+    projectsHeadingHtml: "Projects that<br /><span>make an impact</span>",
+    projectsSubline: "Cloud-native delivery and security automation, built for real-world operations.",
+    shopProjectDescription: "Designed a cloud-native e-commerce platform built from independent services for authentication, products, orders, and notifications. Asynchronous RabbitMQ events decouple order processing, while Kubernetes, Helm, and Argo CD bring secure, repeatable GitOps delivery.",
+    socProjectDescription: "Built an AI-driven SOC lab that turns Linux and Windows security events into actionable incidents. Custom Wazuh detections feed TheHive, while Cortex and MISP enrich observables and Shuffle orchestrates analyst-approved response workflows.",
+    projectArchitectureLink: "Deployment & GitOps",
+    projectPlatformLink: "Microservices platform",
+    projectRepositoryLink: "View SOC lab on GitHub",
     certificationsEyebrow: "Credentials",
     certificationsHeadingHtml: "Licenses and<br /><span>certifications</span>",
     certificationsIntro: "Professional certifications validating expertise in cloud platforms and DevOps practices.",
@@ -88,6 +97,7 @@ const TRANSLATIONS = {
     navAbout: "A propos",
     navSkills: "Competences",
     navExperience: "Experience",
+    navProjects: "Projets",
     navCertifications: "Certifications",
     navContact: "Contact",
     heroGreeting: "Bonjour, je suis",
@@ -112,6 +122,14 @@ const TRANSLATIONS = {
     experienceEyebrow: "Experience professionnelle",
     experienceHeadingHtml: "Construire le futur<br /><span>deploiement apres deploiement</span>",
     experienceSubline: "Experiences importees depuis LinkedIn, affichant les 6 roles les plus recents.",
+    projectsEyebrow: "Projets selectionnes",
+    projectsHeadingHtml: "Des projets qui<br /><span>ont un impact</span>",
+    projectsSubline: "Livraison cloud-native et automatisation de la securite, pensees pour des usages concrets.",
+    shopProjectDescription: "Conception d'une plateforme e-commerce cloud-native composee de services independants pour l'authentification, les produits, les commandes et les notifications. Les evenements RabbitMQ decouplent le traitement des commandes, tandis que Kubernetes, Helm et Argo CD assurent une livraison GitOps securisee et reproductible.",
+    socProjectDescription: "Creation d'un lab SOC oriente IA qui transforme les evenements de securite Linux et Windows en incidents exploitables. Les detections Wazuh alimentent TheHive, Cortex et MISP enrichissent les observables, et Shuffle orchestre des workflows de reponse valides par l'analyste.",
+    projectArchitectureLink: "Deploiement et GitOps",
+    projectPlatformLink: "Plateforme microservices",
+    projectRepositoryLink: "Voir le lab SOC sur GitHub",
     certificationsEyebrow: "Diplomes",
     certificationsHeadingHtml: "Licences et<br /><span>certifications</span>",
     certificationsIntro: "Certifications professionnelles validant l'expertise en cloud et en pratiques DevOps.",
@@ -163,6 +181,7 @@ const TRANSLATIONS = {
     navAbout: "Chi sono",
     navSkills: "Competenze",
     navExperience: "Esperienza",
+    navProjects: "Progetti",
     navCertifications: "Certificazioni",
     navContact: "Contatto",
     heroGreeting: "Ciao, sono",
@@ -187,6 +206,14 @@ const TRANSLATIONS = {
     experienceEyebrow: "Esperienza lavorativa",
     experienceHeadingHtml: "Costruire il futuro<br /><span>un deployment alla volta</span>",
     experienceSubline: "Esperienze importate da LinkedIn, con i 6 ruoli piu recenti.",
+    projectsEyebrow: "Progetti selezionati",
+    projectsHeadingHtml: "Progetti che<br /><span>fanno la differenza</span>",
+    projectsSubline: "Delivery cloud-native e automazione della sicurezza progettate per scenari reali.",
+    shopProjectDescription: "Progettazione di una piattaforma e-commerce cloud-native composta da servizi indipendenti per autenticazione, prodotti, ordini e notifiche. Gli eventi RabbitMQ disaccoppiano l'elaborazione degli ordini, mentre Kubernetes, Helm e Argo CD garantiscono una delivery GitOps sicura e ripetibile.",
+    socProjectDescription: "Realizzazione di un lab SOC orientato all'AI che trasforma gli eventi di sicurezza Linux e Windows in incidenti operativi. Le rilevazioni Wazuh alimentano TheHive, Cortex e MISP arricchiscono gli observable e Shuffle orchestra workflow di risposta approvati dagli analisti.",
+    projectArchitectureLink: "Deployment e GitOps",
+    projectPlatformLink: "Piattaforma microservizi",
+    projectRepositoryLink: "Apri il SOC lab su GitHub",
     certificationsEyebrow: "Credenziali",
     certificationsHeadingHtml: "Licenze e<br /><span>certificazioni</span>",
     certificationsIntro: "Certificazioni professionali che convalidano competenze in cloud e pratiche DevOps.",
@@ -254,13 +281,14 @@ function applyTranslations() {
   }
 
   const navLinks = document.querySelectorAll(".main-nav .nav-link");
-  if (navLinks.length >= 6) {
+  if (navLinks.length >= 7) {
     navLinks[0].textContent = t("navHome");
     navLinks[1].textContent = t("navAbout");
     navLinks[2].textContent = t("navSkills");
     navLinks[3].textContent = t("navExperience");
-    navLinks[4].textContent = t("navCertifications");
-    navLinks[5].textContent = t("navContact");
+    navLinks[4].textContent = t("navProjects");
+    navLinks[5].textContent = t("navCertifications");
+    navLinks[6].textContent = t("navContact");
   }
 
   const label = document.querySelector('label[for="langSelect"]');
@@ -321,6 +349,11 @@ function applyTranslations() {
   updateText(".experience-heading .eyebrow", t("experienceEyebrow"));
   updateHtml(".experience-heading h2", t("experienceHeadingHtml"));
   updateText(".experience-subline", t("experienceSubline"));
+
+  updateText(".project-heading .eyebrow", t("projectsEyebrow"));
+  updateHtml(".project-heading h2", t("projectsHeadingHtml"));
+  updateText(".project-subline", t("projectsSubline"));
+  renderProjects();
 
   updateText(".cert-heading .eyebrow", t("certificationsEyebrow"));
   updateHtml(".cert-heading h2", t("certificationsHeadingHtml"));
@@ -512,6 +545,75 @@ const sectionObserver = new IntersectionObserver(
 sectionElements.forEach((section) => sectionObserver.observe(section));
 
 const GITHUB_USERNAME = document.body.dataset.githubUser || "wissemsghaier";
+
+const featuredProjects = [
+  {
+    title: "DevSecOps & GitOps E-commerce Platform",
+    period: "01 Aug 2026 - Present",
+    descriptionKey: "shopProjectDescription",
+    icon: "ri-shopping-bag-3-line",
+    technologies: [
+      ["Kubernetes", "kubernetes-plain"], ["Helm", "helm-original"], ["Argo CD", "argocd-plain"],
+      ["GitLab CI", "ri-gitlab-fill"], ["Vault", "vault-plain"], ["Docker", "docker-plain"],
+      ["RabbitMQ", "rabbitmq-original"], ["PostgreSQL", "postgresql-plain"], ["SonarQube", "sonarqube-plain"]
+    ],
+    links: [
+      { labelKey: "projectArchitectureLink", url: "https://github.com/wissemsghaier/Deployment_Application_Shop", icon: "ri-git-repository-line" },
+      { labelKey: "projectPlatformLink", url: "https://github.com/wissemsghaier/Plateforme_Shop", icon: "ri-code-box-line" }
+    ]
+  },
+  {
+    title: "AI-Driven SOC Lab Automation",
+    period: "Security Operations",
+    descriptionKey: "socProjectDescription",
+    icon: "ri-shield-keyhole-line",
+    technologies: [
+      ["Wazuh", "ri-shield-check-line"], ["TheHive", "ri-bug-2-line"], ["Cortex", "python-plain"],
+      ["MISP", "ri-radar-line"], ["Shuffle SOAR", "ri-flow-chart"], ["Python", "python-plain"],
+      ["Linux", "linux-plain"], ["PowerShell", "powershell-plain"]
+    ],
+    links: [
+      { labelKey: "projectRepositoryLink", url: "https://github.com/wissemsghaier/Soc-Lab-Automation", icon: "ri-github-line" }
+    ]
+  }
+];
+
+function renderProjects() {
+  const projectGrid = document.getElementById("projectGrid");
+  if (!projectGrid) {
+    return;
+  }
+
+  projectGrid.innerHTML = featuredProjects
+    .map((project, index) => {
+      const technologies = project.technologies
+        .map(([name, icon]) => {
+          const iconClass = icon.startsWith("ri-") ? icon : `devicon-${icon}`;
+          return `<li><i class="${iconClass}" aria-hidden="true"></i><span>${name}</span></li>`;
+        })
+        .join("");
+      const links = project.links
+        .map((link) => `<a class="project-link" href="${link.url}" target="_blank" rel="noreferrer"><i class="${link.icon}" aria-hidden="true"></i>${t(link.labelKey)}</a>`)
+        .join("");
+
+      return `
+        <article class="project-card cinematic-panel" style="--i:${index};">
+          <div class="project-card-top">
+            <span class="project-emblem"><i class="${project.icon}" aria-hidden="true"></i></span>
+            <span class="project-period">${project.period}</span>
+          </div>
+          <h3>${project.title}</h3>
+          <p class="project-description">${t(project.descriptionKey)}</p>
+          <ul class="project-tech-list">${technologies}</ul>
+          <div class="project-links">${links}</div>
+        </article>
+      `;
+    })
+    .join("");
+
+  registerCardAnimations(projectGrid);
+  applyTiltEffects(projectGrid);
+}
 
 // Add all LinkedIn projects here. Each item is rendered automatically.
 const linkedinProjects = [
