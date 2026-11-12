@@ -43,8 +43,16 @@ const TRANSLATIONS = {
     projectsSubline: "Cloud-native delivery and security automation, built for real-world operations.",
     shopProjectDescription: "Designed a cloud-native e-commerce platform built from independent services for authentication, products, orders, and notifications. Asynchronous RabbitMQ events decouple order processing, while Kubernetes, Helm, and Argo CD bring secure, repeatable GitOps delivery.",
     socProjectDescription: "Built an AI-driven SOC lab that turns Linux and Windows security events into actionable incidents. Custom Wazuh detections feed TheHive, while Cortex and MISP enrich observables and Shuffle orchestrates analyst-approved response workflows.",
+    intelligentSocProjectDescription: "Extended a Wazuh-based SOC with three Dockerized Python APIs: an ML service for labeled-alert classification, anomaly detection and enrichment; a read-only Copilot that summarizes Wazuh alerts with local Ollama; and a token-protected response API with host/action allowlists and explicit analyst approval. The ML model is trained on reviewed lab data, and response actions remain disabled until securely configured.",
     projectArchitectureLink: "Deployment & GitOps",
     projectPlatformLink: "Microservices platform",
+    projectArchitectureLabel: "Platform architecture",
+    projectArchitectureCaption: "End-to-end integration flow across CI/CD, application services, security, and infrastructure.",
+    projectArchitectureOpen: "View full image",
+    intelligentSocArchitectureLabel: "Intelligent SOC architecture",
+    intelligentSocArchitectureCaption: "Wazuh detection flows through enrichment and ML scoring to approval-gated response, with incident traceability.",
+    socArchitectureLabel: "Home lab SOC architecture",
+    socArchitectureCaption: "Security event flow from detection and investigation to threat intelligence and response.",
     projectRepositoryLink: "View SOC lab on GitHub",
     certificationsEyebrow: "Credentials",
     certificationsHeadingHtml: "Licenses and<br /><span>certifications</span>",
@@ -127,8 +135,16 @@ const TRANSLATIONS = {
     projectsSubline: "Livraison cloud-native et automatisation de la securite, pensees pour des usages concrets.",
     shopProjectDescription: "Conception d'une plateforme e-commerce cloud-native composee de services independants pour l'authentification, les produits, les commandes et les notifications. Les evenements RabbitMQ decouplent le traitement des commandes, tandis que Kubernetes, Helm et Argo CD assurent une livraison GitOps securisee et reproductible.",
     socProjectDescription: "Creation d'un lab SOC oriente IA qui transforme les evenements de securite Linux et Windows en incidents exploitables. Les detections Wazuh alimentent TheHive, Cortex et MISP enrichissent les observables, et Shuffle orchestre des workflows de reponse valides par l'analyste.",
+    intelligentSocProjectDescription: "Extension d'un SOC base sur Wazuh avec trois API Python conteneurisees : analyse ML des alertes labellisees, detection d'anomalies et enrichissement ; Copilot en lecture seule qui synthetise les alertes avec Ollama local ; et API de reponse protegee par token, avec listes d'hotes et d'actions autorisees et approbation explicite d'un analyste. Le modele est entraine sur des donnees de lab verifiees et les actions restent desactivees tant que la configuration securisee n'est pas faite.",
     projectArchitectureLink: "Deploiement et GitOps",
     projectPlatformLink: "Plateforme microservices",
+    projectArchitectureLabel: "Architecture de la plateforme",
+    projectArchitectureCaption: "Flux d'integration de bout en bout : CI/CD, services applicatifs, securite et infrastructure.",
+    projectArchitectureOpen: "Voir l'image en grand",
+    intelligentSocArchitectureLabel: "Architecture du SOC intelligent",
+    intelligentSocArchitectureCaption: "La detection Wazuh alimente l'enrichissement et le scoring ML, puis une reponse soumise a approbation et tracee.",
+    socArchitectureLabel: "Architecture du lab SOC",
+    socArchitectureCaption: "Flux des evenements de securite, de la detection et l'investigation au renseignement et a la reponse.",
     projectRepositoryLink: "Voir le lab SOC sur GitHub",
     certificationsEyebrow: "Diplomes",
     certificationsHeadingHtml: "Licences et<br /><span>certifications</span>",
@@ -211,8 +227,16 @@ const TRANSLATIONS = {
     projectsSubline: "Delivery cloud-native e automazione della sicurezza progettate per scenari reali.",
     shopProjectDescription: "Progettazione di una piattaforma e-commerce cloud-native composta da servizi indipendenti per autenticazione, prodotti, ordini e notifiche. Gli eventi RabbitMQ disaccoppiano l'elaborazione degli ordini, mentre Kubernetes, Helm e Argo CD garantiscono una delivery GitOps sicura e ripetibile.",
     socProjectDescription: "Realizzazione di un lab SOC orientato all'AI che trasforma gli eventi di sicurezza Linux e Windows in incidenti operativi. Le rilevazioni Wazuh alimentano TheHive, Cortex e MISP arricchiscono gli observable e Shuffle orchestra workflow di risposta approvati dagli analisti.",
+    intelligentSocProjectDescription: "Estensione di un SOC basato su Wazuh con tre API Python containerizzate: analisi ML degli alert etichettati, rilevamento anomalie e arricchimento; Copilot in sola lettura che riassume gli alert tramite Ollama locale; e API di risposta protetta da token, con allowlist di host e azioni e approvazione esplicita dell'analista. Il modello si addestra su dati di laboratorio verificati e le azioni restano disabilitate finche la configurazione sicura non e completata.",
     projectArchitectureLink: "Deployment e GitOps",
     projectPlatformLink: "Piattaforma microservizi",
+    projectArchitectureLabel: "Architettura della piattaforma",
+    projectArchitectureCaption: "Flusso di integrazione end-to-end tra CI/CD, servizi applicativi, sicurezza e infrastruttura.",
+    projectArchitectureOpen: "Apri immagine completa",
+    intelligentSocArchitectureLabel: "Architettura SOC intelligente",
+    intelligentSocArchitectureCaption: "Il rilevamento Wazuh alimenta arricchimento e scoring ML, quindi una risposta soggetta ad approvazione e tracciata.",
+    socArchitectureLabel: "Architettura del SOC home lab",
+    socArchitectureCaption: "Flusso degli eventi di sicurezza dal rilevamento e dall'indagine alla threat intelligence e alla risposta.",
     projectRepositoryLink: "Apri il SOC lab su GitHub",
     certificationsEyebrow: "Credenziali",
     certificationsHeadingHtml: "Licenze e<br /><span>certificazioni</span>",
@@ -560,7 +584,14 @@ const featuredProjects = [
     links: [
       { labelKey: "projectArchitectureLink", url: "https://github.com/wissemsghaier/Deployment_Application_Shop", icon: "ri-git-repository-line" },
       { labelKey: "projectPlatformLink", url: "https://github.com/wissemsghaier/Plateforme_Shop", icon: "ri-code-box-line" }
-    ]
+    ],
+    architecture: {
+      image: "assets/architecture_projects/Platform Architecture Integration Flow.png",
+      alt: "End-to-end e-commerce platform architecture integration flow",
+      labelKey: "projectArchitectureLabel",
+      captionKey: "projectArchitectureCaption",
+      openKey: "projectArchitectureOpen"
+    }
   },
   {
     title: "AI-Driven SOC Lab Automation",
@@ -574,7 +605,35 @@ const featuredProjects = [
     ],
     links: [
       { labelKey: "projectRepositoryLink", url: "https://github.com/wissemsghaier/Soc-Lab-Automation", icon: "ri-github-line" }
-    ]
+    ],
+    architecture: {
+      image: "assets/architecture_projects/home-lab-soc-architecture.png",
+      alt: "Home lab SOC architecture for detection, investigation, threat intelligence, and response",
+      labelKey: "socArchitectureLabel",
+      captionKey: "socArchitectureCaption",
+      openKey: "projectArchitectureOpen"
+    }
+  },
+  {
+    title: "Intelligent SOC Platform — ML & SOAR",
+    period: "Machine Learning & Response",
+    descriptionKey: "intelligentSocProjectDescription",
+    icon: "ri-brain-line",
+    technologies: [
+      ["Python", "python-plain"], ["FastAPI", "ri-code-s-slash-line"], ["Docker", "docker-plain"],
+      ["Wazuh", "ri-shield-check-line"], ["XGBoost", "ri-bar-chart-box-line"], ["Ollama", "ri-chat-3-line"],
+      ["Shuffle SOAR", "ri-flow-chart"], ["TheHive", "ri-bug-2-line"], ["MISP", "ri-radar-line"]
+    ],
+    links: [
+      { labelKey: "projectRepositoryLink", url: "https://github.com/wissemsghaier/Plateforme-SOC-intelligente", icon: "ri-github-line" }
+    ],
+    architecture: {
+      image: "assets/architecture_projects/Intelligent SOC Architecture Infographic.png",
+      alt: "Intelligent SOC architecture showing Wazuh detection, enrichment and machine learning, approval-gated response, and traceability",
+      labelKey: "intelligentSocArchitectureLabel",
+      captionKey: "intelligentSocArchitectureCaption",
+      openKey: "projectArchitectureOpen"
+    }
   }
 ];
 
@@ -595,17 +654,33 @@ function renderProjects() {
       const links = project.links
         .map((link) => `<a class="project-link" href="${link.url}" target="_blank" rel="noreferrer"><i class="${link.icon}" aria-hidden="true"></i>${t(link.labelKey)}</a>`)
         .join("");
+      const architecture = project.architecture
+        ? `
+          <figure class="project-architecture">
+            <a class="project-architecture-image" href="${project.architecture.image}" target="_blank" rel="noreferrer" aria-label="${t(project.architecture.openKey)}">
+              <img src="${project.architecture.image}" alt="${project.architecture.alt}" loading="lazy" />
+            </a>
+            <figcaption>
+              <span><strong>${t(project.architecture.labelKey)}</strong>${t(project.architecture.captionKey)}</span>
+              <a href="${project.architecture.image}" target="_blank" rel="noreferrer">${t(project.architecture.openKey)}<i class="ri-arrow-up-right-line" aria-hidden="true"></i></a>
+            </figcaption>
+          </figure>
+        `
+        : "";
 
       return `
-        <article class="project-card cinematic-panel" style="--i:${index};">
-          <div class="project-card-top">
-            <span class="project-emblem"><i class="${project.icon}" aria-hidden="true"></i></span>
-            <span class="project-period">${project.period}</span>
+        <article class="project-card${project.architecture ? " project-card--architecture" : ""} cinematic-panel" style="--i:${index};">
+          <div class="project-card-content">
+            <div class="project-card-top">
+              <span class="project-emblem"><i class="${project.icon}" aria-hidden="true"></i></span>
+              <span class="project-period">${project.period}</span>
+            </div>
+            <h3>${project.title}</h3>
+            <p class="project-description">${t(project.descriptionKey)}</p>
+            <ul class="project-tech-list">${technologies}</ul>
+            <div class="project-links">${links}</div>
           </div>
-          <h3>${project.title}</h3>
-          <p class="project-description">${t(project.descriptionKey)}</p>
-          <ul class="project-tech-list">${technologies}</ul>
-          <div class="project-links">${links}</div>
+          ${architecture}
         </article>
       `;
     })
