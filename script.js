@@ -31,9 +31,7 @@ const TRANSLATIONS = {
       "DevOps and DevSecOps engineering across CI/CD, Kubernetes, SOC automation, and observability.",
     aboutStoryTitle: "DevOps & DevSecOps Engineer",
     aboutStoryP1:
-      "I build secure and dependable software delivery workflows. Across my experience, I have automated CI/CD pipelines, containerized applications, and deployed services to Kubernetes using GitLab CI, Docker, Helm, and Argo CD.",
-    aboutStoryP2:
-      "I also work on SOC automation, integrating Wazuh, TheHive, and Shuffle to enrich alerts and support analyst-led investigations. My projects bring together microservice platforms, GitOps, and observability to connect development, operations, and security.",
+      "Passionate about technology and continuous learning, I enjoy exploring and applying DevOps tools to make software delivery faster, safer, and more reliable. I bring hands-on experience with CI/CD, Docker, Kubernetes, GitOps, observability, and SOC automation using Wazuh, TheHive, and Shuffle. I’m motivated by solving real-world challenges and turning new ideas into dependable solutions, and I’m eager to contribute that mindset to a team building impactful products.",
     skillsEyebrow: "Tools & Technologies",
     experienceEyebrow: "Work Experience",
     experienceHeadingHtml: "Building the future<br /><span>one deployment at a time</span>",
@@ -124,9 +122,7 @@ const TRANSLATIONS = {
       "Ingénierie DevOps et DevSecOps autour du CI/CD, de Kubernetes, de l'automatisation SOC et de l'observabilité.",
     aboutStoryTitle: "Ingénieur DevOps et DevSecOps",
     aboutStoryP1:
-      "Je conçois des chaînes de livraison logicielle sûres et fiables. Au fil de mes expériences, j'ai automatisé des pipelines CI/CD, conteneurisé des applications et déployé des services sur Kubernetes avec GitLab CI, Docker, Helm et Argo CD.",
-    aboutStoryP2:
-      "Je travaille aussi sur l'automatisation SOC, en intégrant Wazuh, TheHive et Shuffle pour enrichir les alertes et faciliter leur analyse par les analystes. Mes projets réunissent microservices, GitOps et observabilité pour rapprocher développement, exploitation et sécurité.",
+      "Passionné par la technologie et l’apprentissage continu, j’aime découvrir et mettre en pratique des outils DevOps pour rendre les livraisons logicielles plus rapides, plus sûres et plus fiables. J’ai acquis une expérience concrète en CI/CD, Docker, Kubernetes, GitOps, observabilité et automatisation SOC avec Wazuh, TheHive et Shuffle. Motivé par les défis concrets, je souhaite mettre cette curiosité et ce savoir-faire au service d’une équipe qui construit des produits utiles et robustes.",
     skillsEyebrow: "Outils et technologies",
     experienceEyebrow: "Experience professionnelle",
     experienceHeadingHtml: "Construire le futur<br /><span>deploiement apres deploiement</span>",
@@ -217,9 +213,7 @@ const TRANSLATIONS = {
       "Ingegneria DevOps e DevSecOps tra CI/CD, Kubernetes, automazione SOC e osservabilità.",
     aboutStoryTitle: "Ingegnere DevOps e DevSecOps",
     aboutStoryP1:
-      "Progetto flussi di rilascio software sicuri e affidabili. Nelle mie esperienze ho automatizzato pipeline CI/CD, containerizzato applicazioni e distribuito servizi su Kubernetes con GitLab CI, Docker, Helm e Argo CD.",
-    aboutStoryP2:
-      "Mi occupo anche di automazione SOC, integrando Wazuh, TheHive e Shuffle per arricchire gli alert e supportare le indagini degli analisti. Nei miei progetti unisco piattaforme a microservizi, GitOps e osservabilità per integrare sviluppo, operations e sicurezza.",
+      "Appassionato di tecnologia e di apprendimento continuo, mi piace scoprire e applicare strumenti DevOps per rendere il rilascio del software più rapido, sicuro e affidabile. Ho maturato esperienza pratica con CI/CD, Docker, Kubernetes, GitOps, osservabilità e automazione SOC con Wazuh, TheHive e Shuffle. Mi motivano le sfide concrete e desidero contribuire con curiosità e competenze alla realizzazione di prodotti utili e solidi.",
     skillsEyebrow: "Strumenti e tecnologie",
     experienceEyebrow: "Esperienza lavorativa",
     experienceHeadingHtml: "Costruire il futuro<br /><span>un deployment alla volta</span>",
@@ -363,13 +357,7 @@ function applyTranslations() {
   updateHtml(".about-showcase-head h2", t("aboutHeadingHtml"));
   updateText(".about-showcase-sub", t("aboutSubline"));
   updateText(".about-story-tile h3", t("aboutStoryTitle"));
-  const storyParagraphs = document.querySelectorAll(".about-story-tile p");
-  if (storyParagraphs[0]) {
-    storyParagraphs[0].textContent = t("aboutStoryP1");
-  }
-  if (storyParagraphs[1]) {
-    storyParagraphs[1].textContent = t("aboutStoryP2");
-  }
+  updateText(".about-story-tile p", t("aboutStoryP1"));
 
   updateText(".skills-heading .eyebrow", t("skillsEyebrow"));
 
