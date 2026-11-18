@@ -29,7 +29,7 @@ const TRANSLATIONS = {
     aboutHeadingHtml: "Turning complexity into<br /><span class=\"gradient-text\">secure, reliable delivery</span>",
     aboutSubline:
       "DevOps and DevSecOps engineering across CI/CD, Kubernetes, SOC automation, and observability.",
-    aboutStoryTitle: "DevOps & DevSecOps Engineer",
+    aboutStoryTitle: "DevSecOps Engineer | Cybersecurity | Secure CI/CD Pipelines & SOC Automation (SIEM/SOAR)",
     aboutStoryP1:
       "DevOps and DevSecOps engineer specializing in deployment automation, CI/CD pipeline security, and container orchestration. My expertise covers the full software delivery lifecycle: continuous integration and deployment, containerization with Docker, Kubernetes orchestration, GitOps practices, and observability. I integrate security at every stage — code quality analysis, vulnerability detection, secret management, and configuration compliance — and I have solid experience in security operations, including detection engineering, incident response automation, and SIEM monitoring. Rigorous, results-driven, and passionate about my field, I am committed to delivering reliable infrastructures and measurable value to every team I work with.",
     skillsEyebrow: "Tools & Technologies",
@@ -120,7 +120,7 @@ const TRANSLATIONS = {
     aboutHeadingHtml: "Transformer la complexité en<br /><span class=\"gradient-text\">livraisons sûres et fiables</span>",
     aboutSubline:
       "Ingénierie DevOps et DevSecOps autour du CI/CD, de Kubernetes, de l'automatisation SOC et de l'observabilité.",
-    aboutStoryTitle: "Ingénieur DevOps et DevSecOps",
+    aboutStoryTitle: "Ingénieur DevSecOps | Cybersécurité | Pipelines CI/CD sécurisés et automatisation SOC (SIEM/SOAR)",
     aboutStoryP1:
       "Ingénieur DevOps et DevSecOps, spécialisé dans l'automatisation des déploiements, la sécurisation des pipelines CI/CD et l'orchestration de conteneurs. Mon expertise couvre l'ensemble du cycle de livraison logicielle : intégration et déploiement continus, conteneurisation avec Docker, orchestration Kubernetes, pratiques GitOps et observabilité. J'intègre la sécurité à chaque étape — analyse de la qualité du code, détection des vulnérabilités, gestion des secrets et conformité des configurations — et je dispose d'une solide expérience en opérations de sécurité : ingénierie de détection, automatisation de la réponse aux incidents et supervision SIEM. Rigoureux, orienté résultats et passionné par mon métier, je m'engage à livrer des infrastructures fiables et une valeur mesurable à chaque équipe que je rejoins.",
     skillsEyebrow: "Outils et technologies",
@@ -211,7 +211,7 @@ const TRANSLATIONS = {
     aboutHeadingHtml: "Dalla complessità a<br /><span class=\"gradient-text\">rilasci sicuri e affidabili</span>",
     aboutSubline:
       "Ingegneria DevOps e DevSecOps tra CI/CD, Kubernetes, automazione SOC e osservabilità.",
-    aboutStoryTitle: "Ingegnere DevOps e DevSecOps",
+    aboutStoryTitle: "Ingegnere DevSecOps | Cybersecurity | Pipeline CI/CD sicure e automazione SOC (SIEM/SOAR)",
     aboutStoryP1:
       "Ingegnere DevOps e DevSecOps, specializzato nell'automazione dei deployment, nella sicurezza delle pipeline CI/CD e nell'orchestrazione di container. La mia competenza copre l'intero ciclo di delivery del software: integrazione e distribuzione continua, containerizzazione con Docker, orchestrazione Kubernetes, pratiche GitOps e osservabilità. Integro la sicurezza in ogni fase — analisi della qualità del codice, rilevamento delle vulnerabilità, gestione dei segreti e conformità delle configurazioni — e possiedo una solida esperienza nelle operazioni di sicurezza: ingegneria del rilevamento, automazione della risposta agli incidenti e monitoraggio SIEM. Rigoroso, orientato ai risultati e appassionato del mio lavoro, mi impegno a fornire infrastrutture affidabili e valore misurabile a ogni team con cui collaboro.",
     skillsEyebrow: "Strumenti e tecnologie",
