@@ -31,7 +31,9 @@ const TRANSLATIONS = {
       "DevOps and DevSecOps engineering across CI/CD, Kubernetes, SOC automation, and observability.",
     aboutStoryTitle: "DevOps & DevSecOps Engineer",
     aboutStoryP1:
-      "Passionate about technology and continuous learning, I enjoy exploring and applying DevOps tools to make software delivery faster, safer, and more reliable. I bring hands-on experience with CI/CD, Docker, Kubernetes, GitOps, observability, and SOC automation using Wazuh, TheHive, and Shuffle. I’m motivated by solving real-world challenges and turning new ideas into dependable solutions, and I’m eager to contribute that mindset to a team building impactful products.",
+      "I am Wissem Sghaier, a DevOps and DevSecOps engineer with a Master's degree in Systems, Networks and Cloud Computing, currently based in Italy. Over the past years I have worked with companies in Italy and Tunisia, where I designed CI/CD pipelines for many frameworks, containerized applications with Docker, and deployed microservice platforms to Kubernetes with Helm, Traefik, and Argo CD following a GitOps approach. From multi-framework delivery automation to a complete 3-tier e-commerce platform, I turn complex infrastructure needs into automated, reliable, and maintainable solutions.",
+    aboutStoryP2:
+      "My strongest focus today is DevSecOps and security operations. At Nouvelair, I built an end-to-end DevSecOps pipeline where every release passes unit and dependency tests, mutation testing, and SonarQube quality gates, then goes through OPA policy checks, Trivy image scanning, and Falco runtime intrusion detection before being deployed to Kubernetes with Helm — with Slack notifications, Prometheus and Grafana monitoring, and HashiCorp Vault secret management around the whole chain. In my current role, I extend this into SOC engineering: I develop and validate Wazuh detection rules for Linux and Windows covering network scans, authentication failures, ICMP anomalies, and Sysmon activity; I integrate Wazuh with TheHive in Python to normalize alerts, map severity, and enrich observables such as IPs, domains, URLs, and hashes; I orchestrate Shuffle workflows triggered by TheHive webhooks with enrichment summaries sent to Telegram; and I build Wazuh and OpenSearch dashboards that give analysts clear visibility over alerts, agents, and file integrity. This combination of secure delivery and detection engineering lets me protect platforms from the pipeline to production.",
     skillsEyebrow: "Tools & Technologies",
     experienceEyebrow: "Work Experience",
     experienceHeadingHtml: "Building the future<br /><span>one deployment at a time</span>",
@@ -122,7 +124,9 @@ const TRANSLATIONS = {
       "Ingénierie DevOps et DevSecOps autour du CI/CD, de Kubernetes, de l'automatisation SOC et de l'observabilité.",
     aboutStoryTitle: "Ingénieur DevOps et DevSecOps",
     aboutStoryP1:
-      "Passionné par la technologie et l’apprentissage continu, j’aime découvrir et mettre en pratique des outils DevOps pour rendre les livraisons logicielles plus rapides, plus sûres et plus fiables. J’ai acquis une expérience concrète en CI/CD, Docker, Kubernetes, GitOps, observabilité et automatisation SOC avec Wazuh, TheHive et Shuffle. Motivé par les défis concrets, je souhaite mettre cette curiosité et ce savoir-faire au service d’une équipe qui construit des produits utiles et robustes.",
+      "Je suis Wissem Sghaier, ingénieur DevOps et DevSecOps, titulaire d'un Master en Systèmes, Réseaux et Cloud Computing, actuellement basé en Italie. Au fil des années, j'ai travaillé avec des entreprises en Italie et en Tunisie, où j'ai conçu des pipelines CI/CD pour de nombreux frameworks, conteneurisé des applications avec Docker et déployé des plateformes microservices sur Kubernetes avec Helm, Traefik et Argo CD selon une approche GitOps. De l'automatisation de livraisons multi-frameworks à une plateforme e-commerce 3-tiers complète, je transforme des besoins d'infrastructure complexes en solutions automatisées, fiables et maintenables.",
+    aboutStoryP2:
+      "Mon cœur de métier aujourd'hui est le DevSecOps et les opérations de sécurité. Chez Nouvelair, j'ai construit un pipeline DevSecOps de bout en bout où chaque version passe des tests unitaires et de dépendances, du mutation testing et des contrôles qualité SonarQube, puis des vérifications de politiques OPA, des analyses d'images Trivy et une détection d'intrusions à l'exécution avec Falco avant d'être déployée sur Kubernetes avec Helm — le tout accompagné de notifications Slack, d'une supervision Prometheus et Grafana et d'une gestion des secrets avec HashiCorp Vault. Dans mon poste actuel, j'étends ce travail à l'ingénierie SOC : je développe et valide des règles de détection Wazuh pour Linux et Windows couvrant les scans réseau, les échecs d'authentification, les anomalies ICMP et l'activité Sysmon ; j'intègre Wazuh à TheHive en Python pour normaliser les alertes, hiérarchiser leur sévérité et enrichir les observables (IP, domaines, URL, hash) ; j'orchestre des workflows Shuffle déclenchés par les webhooks de TheHive avec des synthèses d'enrichissement envoyées sur Telegram ; et je construis des tableaux de bord Wazuh et OpenSearch qui donnent aux analystes une visibilité claire sur les alertes, les agents et l'intégrité des fichiers. Cette combinaison de livraison sécurisée et d'ingénierie de détection me permet de protéger les plateformes du pipeline jusqu'à la production.",
     skillsEyebrow: "Outils et technologies",
     experienceEyebrow: "Experience professionnelle",
     experienceHeadingHtml: "Construire le futur<br /><span>deploiement apres deploiement</span>",
@@ -213,7 +217,9 @@ const TRANSLATIONS = {
       "Ingegneria DevOps e DevSecOps tra CI/CD, Kubernetes, automazione SOC e osservabilità.",
     aboutStoryTitle: "Ingegnere DevOps e DevSecOps",
     aboutStoryP1:
-      "Appassionato di tecnologia e di apprendimento continuo, mi piace scoprire e applicare strumenti DevOps per rendere il rilascio del software più rapido, sicuro e affidabile. Ho maturato esperienza pratica con CI/CD, Docker, Kubernetes, GitOps, osservabilità e automazione SOC con Wazuh, TheHive e Shuffle. Mi motivano le sfide concrete e desidero contribuire con curiosità e competenze alla realizzazione di prodotti utili e solidi.",
+      "Sono Wissem Sghaier, ingegnere DevOps e DevSecOps con un Master in Sistemi, Reti e Cloud Computing, attualmente residente in Italia. Negli ultimi anni ho lavorato con aziende in Italia e in Tunisia, dove ho progettato pipeline CI/CD per numerosi framework, containerizzato applicazioni con Docker e distribuito piattaforme a microservizi su Kubernetes con Helm, Traefik e Argo CD seguendo un approccio GitOps. Dall'automazione della delivery multi-framework a una piattaforma e-commerce a 3 livelli completa, trasformo esigenze infrastrutturali complesse in soluzioni automatizzate, affidabili e manutenibili.",
+    aboutStoryP2:
+      "Oggi il mio focus principale è il DevSecOps e le operazioni di sicurezza. In Nouvelair ho realizzato una pipeline DevSecOps end-to-end in cui ogni rilascio supera test unitari e delle dipendenze, mutation testing e quality gate SonarQube, quindi controlli delle policy con OPA, scansioni delle immagini con Trivy e rilevamento delle intrusioni runtime con Falco prima del deploy su Kubernetes con Helm — con notifiche Slack, monitoraggio Prometheus e Grafana e gestione dei segreti con HashiCorp Vault lungo tutta la catena. Nel mio ruolo attuale estendo questo lavoro all'ingegneria SOC: sviluppo e valido regole di rilevamento Wazuh per Linux e Windows che coprono scansioni di rete, errori di autenticazione, anomalie ICMP e attività Sysmon; integro Wazuh con TheHive in Python per normalizzare gli alert, classificarne la gravità e arricchire gli observable (IP, domini, URL, hash); orchestro workflow Shuffle attivati dai webhook di TheHive con riepiloghi di arricchimento inviati su Telegram; e costruisco dashboard Wazuh e OpenSearch che offrono agli analisti piena visibilità su alert, agent e integrità dei file. Questa combinazione di delivery sicura e ingegneria del rilevamento mi consente di proteggere le piattaforme dalla pipeline fino alla produzione.",
     skillsEyebrow: "Strumenti e tecnologie",
     experienceEyebrow: "Esperienza lavorativa",
     experienceHeadingHtml: "Costruire il futuro<br /><span>un deployment alla volta</span>",
@@ -357,7 +363,13 @@ function applyTranslations() {
   updateHtml(".about-showcase-head h2", t("aboutHeadingHtml"));
   updateText(".about-showcase-sub", t("aboutSubline"));
   updateText(".about-story-tile h3", t("aboutStoryTitle"));
-  updateText(".about-story-tile p", t("aboutStoryP1"));
+  const storyParagraphs = document.querySelectorAll(".about-story-tile p");
+  if (storyParagraphs[0]) {
+    storyParagraphs[0].textContent = t("aboutStoryP1");
+  }
+  if (storyParagraphs[1]) {
+    storyParagraphs[1].textContent = t("aboutStoryP2");
+  }
 
   updateText(".skills-heading .eyebrow", t("skillsEyebrow"));
 
