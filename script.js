@@ -37,7 +37,7 @@ const TRANSLATIONS = {
     skillsEyebrow: "Tools & Technologies",
     experienceEyebrow: "Work Experience",
     experienceHeadingHtml: "Building the future<br /><span>one deployment at a time</span>",
-    experienceSubline: "Experiences imported from LinkedIn profile, showing the 6 most recent roles.",
+    experienceSubline: "Professional experience, responsibilities, and technologies from my CV.",
     projectsEyebrow: "Selected Work",
     projectsHeadingHtml: "Projects that<br /><span>make an impact</span>",
     projectsSubline: "Cloud-native delivery and security automation, built for real-world operations.",
@@ -79,7 +79,7 @@ const TRANSLATIONS = {
     showCredential: "Show credential",
     noCertificationsYet: "No certifications yet",
     addCertificationsHint: "Add your certifications in the certifications array inside script.js.",
-    noExperienceDataYet: "No experience data available yet. Update linkedinExperiences in script.js.",
+    noExperienceDataYet: "No experience data available yet. Add entries to workExperiences in script.js.",
     noDescription: "No description provided.",
     openRepository: "Open repository",
     noLinkedinProjects: "No LinkedIn projects added yet",
@@ -129,7 +129,7 @@ const TRANSLATIONS = {
     skillsEyebrow: "Outils et technologies",
     experienceEyebrow: "Experience professionnelle",
     experienceHeadingHtml: "Construire le futur<br /><span>deploiement apres deploiement</span>",
-    experienceSubline: "Experiences importees depuis LinkedIn, affichant les 6 roles les plus recents.",
+    experienceSubline: "Experiences professionnelles, missions et technologies issues de mon CV.",
     projectsEyebrow: "Projets selectionnes",
     projectsHeadingHtml: "Des projets qui<br /><span>ont un impact</span>",
     projectsSubline: "Livraison cloud-native et automatisation de la securite, pensees pour des usages concrets.",
@@ -171,7 +171,7 @@ const TRANSLATIONS = {
     showCredential: "Voir le certificat",
     noCertificationsYet: "Aucune certification pour le moment",
     addCertificationsHint: "Ajoutez vos certifications dans le tableau certifications de script.js.",
-    noExperienceDataYet: "Aucune experience disponible. Mettez a jour linkedinExperiences dans script.js.",
+    noExperienceDataYet: "Aucune experience disponible. Ajoutez des entrees dans workExperiences dans script.js.",
     noDescription: "Aucune description fournie.",
     openRepository: "Ouvrir le depot",
     noLinkedinProjects: "Aucun projet LinkedIn ajoute",
@@ -221,7 +221,7 @@ const TRANSLATIONS = {
     skillsEyebrow: "Strumenti e tecnologie",
     experienceEyebrow: "Esperienza lavorativa",
     experienceHeadingHtml: "Costruire il futuro<br /><span>un deployment alla volta</span>",
-    experienceSubline: "Esperienze importate da LinkedIn, con i 6 ruoli piu recenti.",
+    experienceSubline: "Esperienze professionali, responsabilita e tecnologie tratte dal mio CV.",
     projectsEyebrow: "Progetti selezionati",
     projectsHeadingHtml: "Progetti che<br /><span>fanno la differenza</span>",
     projectsSubline: "Delivery cloud-native e automazione della sicurezza progettate per scenari reali.",
@@ -263,7 +263,7 @@ const TRANSLATIONS = {
     showCredential: "Mostra certificato",
     noCertificationsYet: "Nessuna certificazione al momento",
     addCertificationsHint: "Aggiungi le certificazioni nell'array certifications dentro script.js.",
-    noExperienceDataYet: "Nessuna esperienza disponibile. Aggiorna linkedinExperiences in script.js.",
+    noExperienceDataYet: "Nessuna esperienza disponibile. Aggiungi voci a workExperiences in script.js.",
     noDescription: "Nessuna descrizione disponibile.",
     openRepository: "Apri repository",
     noLinkedinProjects: "Nessun progetto LinkedIn aggiunto",
@@ -402,7 +402,7 @@ function applyTranslations() {
     footerRole.textContent = t("footerRole");
   }
 
-  renderExperiences(6);
+  renderExperiences();
   renderCertifications();
 }
 
@@ -721,29 +721,45 @@ const linkedinProjects = [
   }
 ];
 
-const linkedinExperiences = [
+const workExperiences = [
   {
-    role: "DevOps Engineer",
+    role: "DevSecOps Engineer | Cybersecurity",
     company: "Informatica Soluzioni Aziendali",
-    period: "Sep 2025 - Present",
+    location: "Ragusa, Italy",
+    period: "01/09/2025 - Present",
     summary:
-      "Building and operating a 3-tier PERN platform with full containerization, GitOps delivery, and observability for production workloads.",
-    icon: "ri-terminal-window-line",
+      "Secure CI/CD, SOC automation (SIEM/SOAR), and cloud-native platform engineering.",
+    highlights: [
+      "Developed and validated Wazuh detection rules for Linux and Windows, covering network scans, repeated authentication failures, ICMP anomalies, and Sysmon activity.",
+      "Integrated Wazuh with TheHive using Python; normalized alerts, mapped severity, enriched observables, and removed duplicates.",
+      "Automated TheHive-to-Shuffle analysis workflows and Telegram enrichment summaries, with analyst review of containment actions.",
+      "Built seven Wazuh and OpenSearch dashboards for alert investigations, network activity, authentication failures, agent status, and file integrity monitoring.",
+      "Designed a 3-tier e-commerce platform with React/Nginx, Node.js/Express APIs, and RabbitMQ; containerized services and automated CI/CD with GitLab, SonarQube, and Nexus.",
+      "Deployed to Kubernetes with Helm, Traefik, and Argo CD; managed secrets with Vault and monitored services with Prometheus, Grafana, Loki, and Promtail."
+    ],
+    icon: "ri-shield-keyhole-line",
     pills: [
-      { title: "PERN", detail: "PostgreSQL + Node.js", icon: "ri-stack-line" },
-      { title: "GitOps", detail: "ArgoCD continuous deploy", icon: "ri-git-branch-line" },
-      { title: "Kubernetes", detail: "Cluster operations", icon: "ri-steering-2-line" },
-      { title: "Monitoring", detail: "Loki + Grafana", icon: "ri-line-chart-line" },
-      { title: "Registry", detail: "Nexus artifacts", icon: "ri-store-2-line" },
-      { title: "Docker", detail: "Platform containerization", icon: "ri-ship-2-line" }
+      { title: "SOC", detail: "Wazuh + TheHive + Shuffle", icon: "ri-radar-line" },
+      { title: "DevSecOps", detail: "GitLab CI/CD + SonarQube", icon: "ri-shield-check-line" },
+      { title: "Kubernetes", detail: "Helm + Traefik + Argo CD", icon: "ri-steering-2-line" },
+      { title: "Platform", detail: "React + Node.js + RabbitMQ", icon: "ri-stack-line" },
+      { title: "Observability", detail: "Prometheus + Grafana + Loki", icon: "ri-line-chart-line" },
+      { title: "Secrets", detail: "HashiCorp Vault", icon: "ri-lock-2-line" }
     ]
   },
   {
     role: "DevOps Engineer",
     company: "Nouvelair",
-    period: "Jan 2025 - Sep 2025",
+    location: "Monastir, Tunisia",
+    period: "01/01/2025 - 01/09/2025",
     summary:
-      "Implemented an end-to-end DevSecOps pipeline with policy checks, image scanning, runtime detection, and automated Kubernetes deployment.",
+      "Implemented an end-to-end DevSecOps pipeline for testing, security checks, Kubernetes deployments, and monitoring.",
+    highlights: [
+      "Integrated unit and dependency tests, mutation testing, and SonarQube code-quality analysis into CI/CD.",
+      "Added OPA policy checks, Trivy Docker image scans, and Falco runtime intrusion detection.",
+      "Deployed a three-tier application to Kubernetes with Helm, followed by performance and configuration scans.",
+      "Configured Slack pipeline notifications, Prometheus and Grafana monitoring, and secure secret management with HashiCorp Vault."
+    ],
     icon: "ri-shield-check-line",
     pills: [
       { title: "CI/CD", detail: "GitLab + Jenkins", icon: "ri-flow-chart" },
@@ -757,9 +773,15 @@ const linkedinExperiences = [
   {
     role: "DevOps Engineer",
     company: "Artificial Insight",
-    period: "Jun 2024 - Sep 2024",
+    location: "Tunis, Tunisia",
+    period: "01/06/2024 - 30/09/2024",
     summary:
-      "Designed multi-framework CI/CD pipelines and integrated quality gates, artifact management, and performance testing for delivery reliability.",
+      "Designed and implemented CI/CD pipelines for multiple frameworks and languages.",
+    highlights: [
+      "Built delivery pipelines for Next.js, NestJS, Spring Boot, Angular, Flutter, Lumen, and Go-Gin.",
+      "Automated integration and delivery with GitLab CI and Jenkins, reducing manual release work.",
+      "Integrated SonarQube code-quality checks, Nexus artifact management, and JMeter performance tests."
+    ],
     icon: "ri-cpu-line",
     pills: [
       { title: "Pipelines", detail: "GitLab CI + Jenkins", icon: "ri-flow-chart" },
@@ -773,9 +795,15 @@ const linkedinExperiences = [
   {
     role: "Junior Software Engineer",
     company: "Mobilite",
-    period: "Jun 2024 - Jun 2024",
+    location: "Monastir, Tunisia",
+    period: "01/06/2024 - 30/06/2024",
     summary:
-      "Developed secure authentication and role-based authorization workflows with REST APIs in a full MERN architecture.",
+      "Developed a secure authentication and role-management system using the MERN stack.",
+    highlights: [
+      "Implemented login, registration, and password recovery with role-based access for Superadmin, Admin, and Developer.",
+      "Managed user profiles and permissions according to each role's responsibilities.",
+      "Built the application with MongoDB, Express.js, React.js, and Node.js, including REST APIs for frontend/backend communication."
+    ],
     icon: "ri-code-box-line",
     pills: [
       { title: "MERN", detail: "MongoDB + React + Node", icon: "ri-stack-line" },
@@ -789,9 +817,15 @@ const linkedinExperiences = [
   {
     role: "DevOps Engineer",
     company: "Quantum Solutions",
-    period: "Jan 2023 - Aug 2023",
+    location: "Tunis, Tunisia",
+    period: "01/01/2023 - 01/08/2023",
     summary:
-      "Built dedicated CI and CD pipelines for Laravel and Next.js, with automated testing, quality controls, and environment deployments.",
+      "Created separate CI/CD pipelines tailored to Laravel and Next.js applications.",
+    highlights: [
+      "Automated unit tests, linting, and SonarQube quality analysis before integration.",
+      "Configured continuous delivery to staging and production, publishing artifacts to Nexus and packaging deployments with Docker.",
+      "Reduced release time and manual deployment risk through automated build, test, and deployment workflows."
+    ],
     icon: "ri-settings-4-line",
     pills: [
       { title: "CI", detail: "Unit tests and linting", icon: "ri-test-tube-line" },
@@ -801,16 +835,52 @@ const linkedinExperiences = [
       { title: "Docker", detail: "Deployment packaging", icon: "ri-ship-2-line" },
       { title: "Nexus", detail: "Artifact flow", icon: "ri-store-2-line" }
     ]
+  },
+  {
+    role: "IT Technician",
+    company: "Sartex Group",
+    location: "Monastir, Tunisia",
+    period: "01/07/2022 - 31/08/2022",
+    summary: "Provided technical support and business network and Windows system administration.",
+    highlights: [
+      "Configured switches and routers to support reliable company networks.",
+      "Provided technical support and administered Windows systems.",
+      "Installed, configured, and maintained computer hardware."
+    ],
+    icon: "ri-tools-line",
+    pills: [
+      { title: "Networking", detail: "Switches + routers", icon: "ri-router-line" },
+      { title: "Systems", detail: "Windows administration", icon: "ri-windows-line" },
+      { title: "Hardware", detail: "Installation + maintenance", icon: "ri-cpu-line" }
+    ]
+  },
+  {
+    role: "IT Technician",
+    company: "SOPAT",
+    location: "Monastir, Tunisia",
+    period: "01/03/2022 - 30/04/2022",
+    summary: "Supported video surveillance, network infrastructure, and server configuration.",
+    highlights: [
+      "Installed, configured, and optimized surveillance cameras for effective security coverage.",
+      "Implemented, configured, and monitored local and wide-area networks.",
+      "Configured web, DHCP, and DNS services to maintain connectivity, IP addressing, and domain-name resolution."
+    ],
+    icon: "ri-computer-line",
+    pills: [
+      { title: "Surveillance", detail: "Camera installation", icon: "ri-cctv-line" },
+      { title: "Networking", detail: "LAN + WAN", icon: "ri-router-line" },
+      { title: "Servers", detail: "Web + DHCP + DNS", icon: "ri-server-line" }
+    ]
   }
 ];
 
-function renderExperiences(limit = 6) {
+function renderExperiences(limit = workExperiences.length) {
   const experienceGrid = document.getElementById("experienceGrid");
   if (!experienceGrid) {
     return;
   }
 
-  const items = linkedinExperiences.slice(0, Math.max(0, limit));
+  const items = workExperiences.slice(0, Math.max(0, limit));
   if (items.length === 0) {
     experienceGrid.innerHTML = `
       <article class="experience-card cinematic-panel">
@@ -830,6 +900,9 @@ function renderExperiences(limit = 6) {
             `<li class="experience-pill"><i class="${pill.icon || "ri-checkbox-circle-line"}"></i><div><strong>${pill.title}</strong><small>${pill.detail}</small></div></li>`
         )
         .join("");
+      const highlights = (item.highlights || [])
+        .map((highlight) => `<li>${highlight}</li>`)
+        .join("");
 
       const accentClass = index % 2 === 1 ? " accent" : "";
 
@@ -840,11 +913,12 @@ function renderExperiences(limit = 6) {
             <span class="experience-emblem${accentClass}"><i class="${item.icon || "ri-briefcase-line"}"></i></span>
             <div>
               <h3 class="experience-role">${item.role}</h3>
-              <p class="experience-company">${item.company}</p>
+              <p class="experience-company">${item.company}${item.location ? ` · ${item.location}` : ""}</p>
               <p class="experience-period">${item.period}</p>
             </div>
           </div>
           <p class="experience-summary">${item.summary}</p>
+          <ul class="experience-highlights">${highlights}</ul>
           <ul class="experience-pill-grid">${pills}</ul>
         </article>
       `;
@@ -1299,7 +1373,7 @@ function ensureCardVisibilityFallback() {
   }, 950);
 }
 
-renderExperiences(6);
+renderExperiences();
 registerCardAnimations();
 applyTiltEffects();
 renderCertifications();

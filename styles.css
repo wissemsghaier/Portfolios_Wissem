@@ -1391,6 +1391,20 @@ section h3 {
   line-height: 1.55;
 }
 
+.experience-highlights {
+  display: grid;
+  gap: 0.32rem;
+  margin: 0.58rem 0 0;
+  padding-left: 1rem;
+  color: #a9bdd8;
+  font-size: 0.55rem;
+  line-height: 1.5;
+}
+
+.experience-highlights li::marker {
+  color: #84a8ff;
+}
+
 .experience-pill-grid {
   list-style: none;
   margin: 0.72rem 0 0;
