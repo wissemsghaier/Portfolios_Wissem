@@ -76,6 +76,7 @@ const TRANSLATIONS = {
     issued: "Issued",
     expires: "Expires",
     skillsLabel: "Skills",
+    experiencePresent: "Present",
     showCredential: "Show credential",
     noCertificationsYet: "No certifications yet",
     addCertificationsHint: "Add your certifications in the certifications array inside script.js.",
@@ -168,6 +169,7 @@ const TRANSLATIONS = {
     issued: "Delivre",
     expires: "Expire",
     skillsLabel: "Competences",
+    experiencePresent: "Aujourd'hui",
     showCredential: "Voir le certificat",
     noCertificationsYet: "Aucune certification pour le moment",
     addCertificationsHint: "Ajoutez vos certifications dans le tableau certifications de script.js.",
@@ -260,6 +262,7 @@ const TRANSLATIONS = {
     issued: "Rilasciato",
     expires: "Scade",
     skillsLabel: "Competenze",
+    experiencePresent: "Attuale",
     showCredential: "Mostra certificato",
     noCertificationsYet: "Nessuna certificazione al momento",
     addCertificationsHint: "Aggiungi le certificazioni nell'array certifications dentro script.js.",
@@ -874,6 +877,261 @@ const workExperiences = [
   }
 ];
 
+const experienceTranslations = {
+  fr: {
+    "Informatica Soluzioni Aziendali": {
+      role: "Ingénieur DevSecOps | Cybersécurité",
+      location: "Raguse, Italie",
+      summary: "Sécurisation du CI/CD, automatisation SOC (SIEM/SOAR) et ingénierie de plateformes cloud-native.",
+      highlights: [
+        "Développement et validation de règles Wazuh pour Linux et Windows : scans réseau, échecs répétés d'authentification, anomalies ICMP et activité Sysmon.",
+        "Intégration de Wazuh et TheHive avec Python : normalisation des alertes, classification par sévérité, enrichissement des indicateurs et déduplication.",
+        "Automatisation des analyses TheHive vers Shuffle et des synthèses d'enrichissement Telegram, avec validation des mesures de confinement par l'analyste.",
+        "Création de sept tableaux de bord Wazuh et OpenSearch pour l'investigation des alertes, l'activité réseau, les échecs d'authentification, l'état des agents et l'intégrité des fichiers.",
+        "Conception d'une plateforme e-commerce 3-tiers avec React/Nginx, des API Node.js/Express et RabbitMQ ; conteneurisation et CI/CD avec GitLab, SonarQube et Nexus.",
+        "Déploiement sur Kubernetes avec Helm, Traefik et Argo CD ; gestion des secrets avec Vault et supervision via Prometheus, Grafana, Loki et Promtail."
+      ],
+      pills: [
+        { title: "SOC", detail: "Wazuh + TheHive + Shuffle" },
+        { title: "DevSecOps", detail: "GitLab CI/CD + SonarQube" },
+        { title: "Kubernetes", detail: "Helm + Traefik + Argo CD" },
+        { title: "Plateforme", detail: "React + Node.js + RabbitMQ" },
+        { title: "Observabilité", detail: "Prometheus + Grafana + Loki" },
+        { title: "Secrets", detail: "HashiCorp Vault" }
+      ]
+    },
+    Nouvelair: {
+      role: "Ingénieur DevOps",
+      location: "Monastir, Tunisie",
+      summary: "Mise en place d'un pipeline DevSecOps de bout en bout : tests, contrôles de sécurité, déploiements Kubernetes et supervision.",
+      highlights: [
+        "Intégration des tests unitaires et de dépendances, du mutation testing et de l'analyse qualité SonarQube au CI/CD.",
+        "Ajout des contrôles de politiques OPA, de l'analyse des images Docker avec Trivy et de la détection d'intrusions à l'exécution avec Falco.",
+        "Déploiement d'une application 3-tiers sur Kubernetes avec Helm, suivi de tests de performance et d'analyses de configuration.",
+        "Configuration des notifications de pipeline sur Slack, de la supervision Prometheus/Grafana et de la gestion sécurisée des secrets avec HashiCorp Vault."
+      ],
+      pills: [
+        { title: "CI/CD", detail: "GitLab + Jenkins" },
+        { title: "Sécurité", detail: "OPA + Trivy" },
+        { title: "Exécution", detail: "Détection d'intrusions Falco" },
+        { title: "Déploiement", detail: "Helm sur Kubernetes" },
+        { title: "Secrets", detail: "HashiCorp Vault" },
+        { title: "Observabilité", detail: "Prometheus + Grafana" }
+      ]
+    },
+    "Artificial Insight": {
+      role: "Ingénieur DevOps",
+      location: "Tunis, Tunisie",
+      summary: "Conception et mise en œuvre de pipelines CI/CD pour plusieurs frameworks et langages.",
+      highlights: [
+        "Création de pipelines de livraison pour Next.js, NestJS, Spring Boot, Angular, Flutter, Lumen et Go-Gin.",
+        "Automatisation de l'intégration et de la livraison avec GitLab CI et Jenkins afin de réduire les interventions manuelles.",
+        "Intégration des contrôles qualité SonarQube, de la gestion des artefacts Nexus et des tests de performance JMeter."
+      ],
+      pills: [
+        { title: "Pipelines", detail: "GitLab CI + Jenkins" },
+        { title: "Qualité du code", detail: "Analyse SonarQube" },
+        { title: "Artefacts", detail: "Dépôt Nexus" },
+        { title: "Performance", detail: "Tests JMeter" },
+        { title: "Conteneurs", detail: "Charges conteneurisées avec Docker" },
+        { title: "Frameworks", detail: "Next.js, NestJS, Spring" }
+      ]
+    },
+    Mobilite: {
+      role: "Ingénieur logiciel junior",
+      location: "Monastir, Tunisie",
+      summary: "Développement d'un système sécurisé d'authentification et de gestion des rôles avec la stack MERN.",
+      highlights: [
+        "Mise en œuvre de la connexion, de l'inscription et de la récupération de mot de passe, avec des accès par rôle : Superadmin, Admin et Développeur.",
+        "Gestion des profils utilisateurs et des autorisations selon les responsabilités de chaque rôle.",
+        "Développement avec MongoDB, Express.js, React.js et Node.js, ainsi que d'API REST pour la communication entre frontend et backend."
+      ],
+      pills: [
+        { title: "MERN", detail: "MongoDB + React + Node" },
+        { title: "Sécurité", detail: "RBAC et authentification" },
+        { title: "API", detail: "Intégrations REST" },
+        { title: "Données", detail: "Modélisation MongoDB" },
+        { title: "Frontend", detail: "Interfaces React" },
+        { title: "Backend", detail: "Services Express" }
+      ]
+    },
+    "Quantum Solutions": {
+      role: "Ingénieur DevOps",
+      location: "Tunis, Tunisie",
+      summary: "Création de pipelines CI/CD distincts adaptés aux applications Laravel et Next.js.",
+      highlights: [
+        "Automatisation des tests unitaires, du linting et de l'analyse qualité SonarQube avant l'intégration.",
+        "Configuration de la livraison continue vers les environnements de staging et de production, avec publication des artefacts sur Nexus et packaging Docker.",
+        "Réduction des délais de livraison et des risques liés aux déploiements manuels grâce à l'automatisation du build, des tests et du déploiement."
+      ],
+      pills: [
+        { title: "CI", detail: "Tests unitaires et linting" },
+        { title: "CD", detail: "Staging et production" },
+        { title: "Jenkins", detail: "Orchestration des pipelines" },
+        { title: "SonarQube", detail: "Contrôles qualité" },
+        { title: "Docker", detail: "Packaging des déploiements" },
+        { title: "Nexus", detail: "Gestion des artefacts" }
+      ]
+    },
+    "Sartex Group": {
+      role: "Technicien informatique",
+      location: "Monastir, Tunisie",
+      summary: "Support technique, administration des réseaux d'entreprise et des systèmes Windows.",
+      highlights: [
+        "Configuration de switchs et de routeurs pour assurer le bon fonctionnement des réseaux de l'entreprise.",
+        "Assistance technique et administration des systèmes Windows.",
+        "Installation, configuration et maintenance du matériel informatique."
+      ],
+      pills: [
+        { title: "Réseaux", detail: "Switchs + routeurs" },
+        { title: "Systèmes", detail: "Administration Windows" },
+        { title: "Matériel", detail: "Installation + maintenance" }
+      ]
+    },
+    SOPAT: {
+      role: "Technicien informatique",
+      location: "Monastir, Tunisie",
+      summary: "Intervention sur la vidéosurveillance, les réseaux et la configuration de serveurs.",
+      highlights: [
+        "Installation, configuration et optimisation de caméras de surveillance pour assurer une couverture de sécurité efficace.",
+        "Mise en œuvre, configuration et supervision de réseaux locaux et étendus.",
+        "Configuration des services Web, DHCP et DNS pour assurer la connectivité, la gestion des adresses IP et la résolution de noms de domaine."
+      ],
+      pills: [
+        { title: "Vidéosurveillance", detail: "Installation de caméras" },
+        { title: "Réseaux", detail: "LAN + WAN" },
+        { title: "Serveurs", detail: "Web + DHCP + DNS" }
+      ]
+    }
+  },
+  it: {
+    "Informatica Soluzioni Aziendali": {
+      role: "Ingegnere DevSecOps | Cybersecurity",
+      location: "Ragusa, Italia",
+      summary: "Sicurezza CI/CD, automazione SOC (SIEM/SOAR) e ingegneria di piattaforme cloud-native.",
+      highlights: [
+        "Sviluppo e validazione di regole Wazuh per Linux e Windows: scansioni di rete, errori ripetuti di autenticazione, anomalie ICMP e attività Sysmon.",
+        "Integrazione di Wazuh con TheHive tramite Python: normalizzazione degli alert, classificazione per gravità, arricchimento degli indicatori e deduplicazione.",
+        "Automazione delle analisi da TheHive a Shuffle e dei riepiloghi di arricchimento su Telegram, con verifica delle azioni di contenimento da parte dell'analista.",
+        "Realizzazione di sette dashboard Wazuh e OpenSearch per indagini sugli alert, attività di rete, errori di autenticazione, stato degli agent e integrità dei file.",
+        "Progettazione di una piattaforma e-commerce a 3 livelli con React/Nginx, API Node.js/Express e RabbitMQ; containerizzazione e CI/CD con GitLab, SonarQube e Nexus.",
+        "Deploy su Kubernetes con Helm, Traefik e Argo CD; gestione dei segreti con Vault e monitoraggio con Prometheus, Grafana, Loki e Promtail."
+      ],
+      pills: [
+        { title: "SOC", detail: "Wazuh + TheHive + Shuffle" },
+        { title: "DevSecOps", detail: "GitLab CI/CD + SonarQube" },
+        { title: "Kubernetes", detail: "Helm + Traefik + Argo CD" },
+        { title: "Piattaforma", detail: "React + Node.js + RabbitMQ" },
+        { title: "Osservabilità", detail: "Prometheus + Grafana + Loki" },
+        { title: "Segreti", detail: "HashiCorp Vault" }
+      ]
+    },
+    Nouvelair: {
+      role: "Ingegnere DevOps",
+      location: "Monastir, Tunisia",
+      summary: "Implementazione di una pipeline DevSecOps end-to-end con test, controlli di sicurezza, deploy Kubernetes e monitoraggio.",
+      highlights: [
+        "Integrazione nel CI/CD di test unitari e delle dipendenze, mutation testing e analisi della qualità del codice con SonarQube.",
+        "Aggiunta di controlli delle policy con OPA, scansione delle immagini Docker con Trivy e rilevamento delle intrusioni runtime con Falco.",
+        "Deploy di un'applicazione a tre livelli su Kubernetes con Helm, seguito da test di performance e scansioni della configurazione.",
+        "Configurazione di notifiche della pipeline su Slack, monitoraggio con Prometheus e Grafana e gestione sicura dei segreti con HashiCorp Vault."
+      ],
+      pills: [
+        { title: "CI/CD", detail: "GitLab + Jenkins" },
+        { title: "Sicurezza", detail: "OPA + Trivy" },
+        { title: "Runtime", detail: "Rilevamento intrusioni Falco" },
+        { title: "Deploy", detail: "Helm su Kubernetes" },
+        { title: "Segreti", detail: "HashiCorp Vault" },
+        { title: "Monitoraggio", detail: "Prometheus + Grafana" }
+      ]
+    },
+    "Artificial Insight": {
+      role: "Ingegnere DevOps",
+      location: "Tunisi, Tunisia",
+      summary: "Progettazione e implementazione di pipeline CI/CD per diversi framework e linguaggi.",
+      highlights: [
+        "Creazione di pipeline di delivery per Next.js, NestJS, Spring Boot, Angular, Flutter, Lumen e Go-Gin.",
+        "Automazione dell'integrazione e della delivery con GitLab CI e Jenkins, riducendo gli interventi manuali.",
+        "Integrazione dei controlli di qualità SonarQube, della gestione degli artefatti Nexus e dei test di performance JMeter."
+      ],
+      pills: [
+        { title: "Pipeline", detail: "GitLab CI + Jenkins" },
+        { title: "Qualità del codice", detail: "Analisi SonarQube" },
+        { title: "Artefatti", detail: "Repository Nexus" },
+        { title: "Performance", detail: "Test JMeter" },
+        { title: "Container", detail: "Workload containerizzati con Docker" },
+        { title: "Framework", detail: "Next.js, NestJS, Spring" }
+      ]
+    },
+    Mobilite: {
+      role: "Ingegnere software junior",
+      location: "Monastir, Tunisia",
+      summary: "Sviluppo di un sistema sicuro di autenticazione e gestione dei ruoli con lo stack MERN.",
+      highlights: [
+        "Implementazione di accesso, registrazione e recupero password con autorizzazioni per i ruoli Superadmin, Admin e Sviluppatore.",
+        "Gestione dei profili utente e dei permessi in base alle responsabilità di ciascun ruolo.",
+        "Sviluppo con MongoDB, Express.js, React.js e Node.js, incluse API REST per la comunicazione tra frontend e backend."
+      ],
+      pills: [
+        { title: "MERN", detail: "MongoDB + React + Node" },
+        { title: "Sicurezza", detail: "RBAC e autenticazione" },
+        { title: "API", detail: "Integrazioni REST" },
+        { title: "Dati", detail: "Modellazione MongoDB" },
+        { title: "Frontend", detail: "Interfacce React" },
+        { title: "Backend", detail: "Servizi Express" }
+      ]
+    },
+    "Quantum Solutions": {
+      role: "Ingegnere DevOps",
+      location: "Tunisi, Tunisia",
+      summary: "Creazione di pipeline CI/CD distinte e specifiche per le applicazioni Laravel e Next.js.",
+      highlights: [
+        "Automazione di test unitari, linting e analisi della qualità SonarQube prima dell'integrazione.",
+        "Configurazione della delivery continua verso staging e produzione, con pubblicazione degli artefatti su Nexus e packaging Docker.",
+        "Riduzione dei tempi di rilascio e dei rischi dei deploy manuali automatizzando build, test e distribuzione."
+      ],
+      pills: [
+        { title: "CI", detail: "Test unitari e linting" },
+        { title: "CD", detail: "Staging e produzione" },
+        { title: "Jenkins", detail: "Orchestrazione delle pipeline" },
+        { title: "SonarQube", detail: "Controlli di qualità" },
+        { title: "Docker", detail: "Packaging dei deploy" },
+        { title: "Nexus", detail: "Gestione degli artefatti" }
+      ]
+    },
+    "Sartex Group": {
+      role: "Tecnico informatico",
+      location: "Monastir, Tunisia",
+      summary: "Supporto tecnico, amministrazione delle reti aziendali e dei sistemi Windows.",
+      highlights: [
+        "Configurazione di switch e router per garantire il corretto funzionamento delle reti aziendali.",
+        "Assistenza tecnica e amministrazione dei sistemi Windows.",
+        "Installazione, configurazione e manutenzione dell'hardware informatico."
+      ],
+      pills: [
+        { title: "Reti", detail: "Switch + router" },
+        { title: "Sistemi", detail: "Amministrazione Windows" },
+        { title: "Hardware", detail: "Installazione + manutenzione" }
+      ]
+    },
+    SOPAT: {
+      role: "Tecnico informatico",
+      location: "Monastir, Tunisia",
+      summary: "Attività su videosorveglianza, reti e configurazione dei server.",
+      highlights: [
+        "Installazione, configurazione e ottimizzazione delle telecamere di sorveglianza per garantire un'efficace copertura di sicurezza.",
+        "Implementazione, configurazione e monitoraggio di reti locali e geografiche.",
+        "Configurazione dei servizi Web, DHCP e DNS per garantire connettività, gestione degli indirizzi IP e risoluzione dei nomi di dominio."
+      ],
+      pills: [
+        { title: "Videosorveglianza", detail: "Installazione telecamere" },
+        { title: "Reti", detail: "LAN + WAN" },
+        { title: "Server", detail: "Web + DHCP + DNS" }
+      ]
+    }
+  }
+};
+
 function renderExperiences(limit = workExperiences.length) {
   const experienceGrid = document.getElementById("experienceGrid");
   if (!experienceGrid) {
@@ -894,13 +1152,17 @@ function renderExperiences(limit = workExperiences.length) {
 
   experienceGrid.innerHTML = items
     .map((item, index) => {
-      const pills = (item.pills || [])
+      const localizedItems = experienceTranslations[currentLanguage] || {};
+      const localized = localizedItems[item.company] || item;
+      const pills = (localized.pills || item.pills || [])
         .map(
-          (pill) =>
-            `<li class="experience-pill"><i class="${pill.icon || "ri-checkbox-circle-line"}"></i><div><strong>${pill.title}</strong><small>${pill.detail}</small></div></li>`
+          (pill, pillIndex) => {
+            const icon = (item.pills[pillIndex] || {}).icon || "ri-checkbox-circle-line";
+            return `<li class="experience-pill"><i class="${icon}"></i><div><strong>${pill.title}</strong><small>${pill.detail}</small></div></li>`;
+          }
         )
         .join("");
-      const highlights = (item.highlights || [])
+      const highlights = (localized.highlights || item.highlights || [])
         .map((highlight) => `<li>${highlight}</li>`)
         .join("");
 
@@ -912,12 +1174,12 @@ function renderExperiences(limit = workExperiences.length) {
           <div class="experience-top">
             <span class="experience-emblem${accentClass}"><i class="${item.icon || "ri-briefcase-line"}"></i></span>
             <div>
-              <h3 class="experience-role">${item.role}</h3>
-              <p class="experience-company">${item.company}${item.location ? ` · ${item.location}` : ""}</p>
-              <p class="experience-period">${item.period}</p>
+              <h3 class="experience-role">${localized.role || item.role}</h3>
+              <p class="experience-company">${item.company}${localized.location || item.location ? ` · ${localized.location || item.location}` : ""}</p>
+              <p class="experience-period">${item.period.replace("Present", t("experiencePresent"))}</p>
             </div>
           </div>
-          <p class="experience-summary">${item.summary}</p>
+          <p class="experience-summary">${localized.summary || item.summary}</p>
           <ul class="experience-highlights">${highlights}</ul>
           <ul class="experience-pill-grid">${pills}</ul>
         </article>
