@@ -26,14 +26,14 @@ const TRANSLATIONS = {
     homePassionText: "I continuously learn emerging DevOps tools to build resilient and innovative platforms.",
     homeCta: "Let's Connect",
     aboutEyebrow: "About Me",
-    aboutHeadingHtml: "Meet your next <span class=\"gradient-text\">DevOps partner</span>",
+    aboutHeadingHtml: "Turning complexity into<br /><span class=\"gradient-text\">secure, reliable delivery</span>",
     aboutSubline:
-      "Hands-on DevOps experience delivering scalable infrastructure and automation solutions for modern applications.",
-    aboutStoryTitle: "DevOps Engineer",
+      "DevOps and DevSecOps engineering across CI/CD, Kubernetes, SOC automation, and observability.",
+    aboutStoryTitle: "DevOps & DevSecOps Engineer",
     aboutStoryP1:
-      "I am an experienced DevOps Engineer focused on secure CI/CD, container orchestration, and platform automation across modern cloud-native environments.",
+      "I build secure and dependable software delivery workflows. Across my experience, I have automated CI/CD pipelines, containerized applications, and deployed services to Kubernetes using GitLab CI, Docker, Helm, and Argo CD.",
     aboutStoryP2:
-      "My work combines release engineering, observability, and DevSecOps practices to deliver resilient infrastructures and reliable software delivery workflows.",
+      "I also work on SOC automation, integrating Wazuh, TheHive, and Shuffle to enrich alerts and support analyst-led investigations. My projects bring together microservice platforms, GitOps, and observability to connect development, operations, and security.",
     skillsEyebrow: "Tools & Technologies",
     experienceEyebrow: "Work Experience",
     experienceHeadingHtml: "Building the future<br /><span>one deployment at a time</span>",
@@ -119,14 +119,14 @@ const TRANSLATIONS = {
     homePassionText: "J'apprends en continu les outils DevOps emergents pour construire des plateformes resilientes et innovantes.",
     homeCta: "Connectons-nous",
     aboutEyebrow: "A propos",
-    aboutHeadingHtml: "Votre prochain <span class=\"gradient-text\">partenaire DevOps</span>",
+    aboutHeadingHtml: "Transformer la complexité en<br /><span class=\"gradient-text\">livraisons sûres et fiables</span>",
     aboutSubline:
-      "Experience DevOps terrain pour livrer des infrastructures evolutives et des solutions d'automatisation pour des applications modernes.",
-    aboutStoryTitle: "Ingenieur DevOps",
+      "Ingénierie DevOps et DevSecOps autour du CI/CD, de Kubernetes, de l'automatisation SOC et de l'observabilité.",
+    aboutStoryTitle: "Ingénieur DevOps et DevSecOps",
     aboutStoryP1:
-      "Je suis un ingenieur DevOps experimente, focalise sur le CI/CD securise, l'orchestration de conteneurs et l'automatisation de plateformes cloud-native.",
+      "Je conçois des chaînes de livraison logicielle sûres et fiables. Au fil de mes expériences, j'ai automatisé des pipelines CI/CD, conteneurisé des applications et déployé des services sur Kubernetes avec GitLab CI, Docker, Helm et Argo CD.",
     aboutStoryP2:
-      "Mon travail combine release engineering, observabilite et pratiques DevSecOps pour livrer des infrastructures resilientes et des workflows fiables.",
+      "Je travaille aussi sur l'automatisation SOC, en intégrant Wazuh, TheHive et Shuffle pour enrichir les alertes et faciliter leur analyse par les analystes. Mes projets réunissent microservices, GitOps et observabilité pour rapprocher développement, exploitation et sécurité.",
     skillsEyebrow: "Outils et technologies",
     experienceEyebrow: "Experience professionnelle",
     experienceHeadingHtml: "Construire le futur<br /><span>deploiement apres deploiement</span>",
@@ -212,14 +212,14 @@ const TRANSLATIONS = {
     homePassionText: "Studio continuamente strumenti DevOps emergenti per creare piattaforme resilienti e innovative.",
     homeCta: "Restiamo in contatto",
     aboutEyebrow: "Chi sono",
-    aboutHeadingHtml: "Il tuo prossimo <span class=\"gradient-text\">partner DevOps</span>",
+    aboutHeadingHtml: "Dalla complessità a<br /><span class=\"gradient-text\">rilasci sicuri e affidabili</span>",
     aboutSubline:
-      "Esperienza DevOps pratica nel fornire infrastrutture scalabili e soluzioni di automazione per applicazioni moderne.",
-    aboutStoryTitle: "Ingegnere DevOps",
+      "Ingegneria DevOps e DevSecOps tra CI/CD, Kubernetes, automazione SOC e osservabilità.",
+    aboutStoryTitle: "Ingegnere DevOps e DevSecOps",
     aboutStoryP1:
-      "Sono un Ingegnere DevOps con esperienza, focalizzato su CI/CD sicuro, orchestrazione di container e automazione di piattaforme cloud-native.",
+      "Progetto flussi di rilascio software sicuri e affidabili. Nelle mie esperienze ho automatizzato pipeline CI/CD, containerizzato applicazioni e distribuito servizi su Kubernetes con GitLab CI, Docker, Helm e Argo CD.",
     aboutStoryP2:
-      "Il mio lavoro unisce release engineering, osservabilita e pratiche DevSecOps per infrastrutture resilienti e delivery affidabile.",
+      "Mi occupo anche di automazione SOC, integrando Wazuh, TheHive e Shuffle per arricchire gli alert e supportare le indagini degli analisti. Nei miei progetti unisco piattaforme a microservizi, GitOps e osservabilità per integrare sviluppo, operations e sicurezza.",
     skillsEyebrow: "Strumenti e tecnologie",
     experienceEyebrow: "Esperienza lavorativa",
     experienceHeadingHtml: "Costruire il futuro<br /><span>un deployment alla volta</span>",
